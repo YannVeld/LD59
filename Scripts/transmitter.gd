@@ -37,6 +37,7 @@ func _input(event) -> void:
 			SignalPacketInstance.instruction = direction
 			SignalPacketInstance.direction = ((mouse_position - dish.global_position).normalized())
 			SignalPacketInstance.position = dish.global_position
+			SignalPacketInstance.add_to_group("Signal Packets")
 			$"../SignalPackets".add_child(SignalPacketInstance)
 	return 
 	

@@ -35,5 +35,8 @@ func _process(delta: float) -> void:
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
 	
 func _on_area_2d_for_reception_area_entered(area: Area2D) -> void:
-	direction = area.instruction
+	if area.is_in_group("Signal Packets"):
+		direction = area.instruction
+	if area.is_in_group("Collectibles"):
+		print("Collected ", area.name)
 	

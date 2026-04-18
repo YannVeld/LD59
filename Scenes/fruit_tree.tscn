@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://kp0ke4eklawt"]
+
+[ext_resource type="Texture2D" uid="uid://novapj26cr87" path="res://Sprites/FruitTree1_short.png" id="1_dxmdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
+size = Vector2(17, 26)
+
+[node name="FruitTree" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
+texture = ExtResource("1_dxmdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_671wp")

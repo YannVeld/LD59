@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://2uj5smrkndef"]
+
+[ext_resource type="Texture2D" uid="uid://cdajvsaprkkqp" path="res://Sprites/TwistyVines_smallest.png" id="1_87spc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
+size = Vector2(29, 24)
+
+[node name="TwistVine" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
+texture = ExtResource("1_87spc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_671wp")
