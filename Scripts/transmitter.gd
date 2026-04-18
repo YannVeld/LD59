@@ -12,22 +12,24 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if event is InputEventKey:
+		direction = "null" 
 		# Send signal packet
-		if Input.is_action_just_pressed("move_down"):
+		if Input.is_action_pressed("move_down"):
 			direction = 'down' 
-		if Input.is_action_just_pressed("move_up"):
+		if Input.is_action_pressed("move_up"):
 			direction = 'up' 
-		if Input.is_action_just_pressed("move_left"):
+		if Input.is_action_pressed("move_left"):
 			direction = 'left' 
-		if Input.is_action_just_pressed("move_right"):
+		if Input.is_action_pressed("move_right"):
 			direction = 'right'
 		
-		mouse_position = get_viewport().get_mouse_position()
-		SignalPacketInstance = SignalPacketScene.instantiate()
-		SignalPacketInstance.instruction = direction
-		SignalPacketInstance.direction = ((mouse_position - self.position).normalized())
-		SignalPacketInstance.position = self.position
-		$"../SignalPackets".add_child(SignalPacketInstance)
+		if direction != 'null': 
+			mouse_position = get_viewport().get_mouse_position()
+			SignalPacketInstance = SignalPacketScene.instantiate()
+			SignalPacketInstance.instruction = direction
+			SignalPacketInstance.direction = ((mouse_position - self.position).normalized())
+			SignalPacketInstance.position = self.position
+			$"../SignalPackets".add_child(SignalPacketInstance)
 	return 
 		
 		
