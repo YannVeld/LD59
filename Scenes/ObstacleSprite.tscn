@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://6ioemcry40n3"]
+
+[ext_resource type="Texture2D" uid="uid://cpf5srwqavjbr" path="res://Sprites/redSquare.png" id="1_eltnj"]
+
+[node name="obstacleSprite" type="Sprite2D" unique_id=587779516]
+
+[node name="RedSquare" type="Sprite2D" parent="." unique_id=1341650958]
+texture = ExtResource("1_eltnj")

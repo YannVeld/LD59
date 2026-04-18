@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://r3oiy4nte3v1"]
+
+[ext_resource type="Script" uid="uid://cqo66ly22l4c6" path="res://Scripts/signal_packet.gd" id="1_6bd5y"]
+[ext_resource type="Texture2D" uid="uid://jg7vkbyvcha6" path="res://Sprites/yellowCircle.png" id="1_hcn3i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bd5y"]
+radius = 5.0
+
+[node name="SignalPacket" type="Area2D" unique_id=644848119]
+script = ExtResource("1_6bd5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048244929]
+modulate = Color(0.5353745, 0.8529901, 0.5002168, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hcn3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460794897]
+shape = SubResource("CircleShape2D_6bd5y")
+debug_color = Color(0.8070536, 0.30038366, 0.7257294, 0.41960785)
