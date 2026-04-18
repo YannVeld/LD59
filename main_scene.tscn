@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://blh22dv3vlfra" path="res://Sprites/Radiotower.png" id="7_66tet"]
 [ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="7_nfk4m"]
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
-[ext_resource type="Texture2D" uid="uid://cu8g0c08nsjog" path="res://Sprites/TowerDish.png" id="8_wr18j"]
+[ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="9_qwutr"]
 [ext_resource type="Script" uid="uid://cl46k24n6f784" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
@@ -1312,7 +1312,7 @@ texture = ExtResource("7_66tet")
 
 [node name="DishSprite" type="Sprite2D" parent="Transmitter" unique_id=2109981275]
 position = Vector2(0, -7)
-texture = ExtResource("8_wr18j")
+texture = ExtResource("9_qwutr")
 offset = Vector2(4, -4)
 script = ExtResource("9_wr18j")
 
