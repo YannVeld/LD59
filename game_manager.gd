@@ -9,7 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_signal_packet_area_entered(area: Area2D) -> void:
-	print('test' )
