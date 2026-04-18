@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec4 outline_color_min : source_color = vec4(0.28, 0.23, 0.52, 1.0);
+uniform vec4 outline_color_min : source_color = vec4(0.28, 0.23, 0.52, 0.0);
 uniform vec4 outline_color_max : source_color = vec4(0.14, 0.10, 0.27, 1.0);
 uniform float fade_time = 4.0;
 

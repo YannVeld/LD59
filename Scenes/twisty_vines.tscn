@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r2efc"]
 shader = ExtResource("1_pqci5")
-shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 1)
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
 shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
 shader_parameter/fade_time = 4.0
 
