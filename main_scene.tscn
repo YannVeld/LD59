@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
 [ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="9_qwutr"]
 [ext_resource type="Script" uid="uid://cl46k24n6f784" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
+[ext_resource type="Texture2D" uid="uid://nnddd1nwg88d" path="res://Sprites/FruitTree1.png" id="11_qwutr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
@@ -1322,5 +1323,9 @@ offset = Vector2(4, -4)
 script = ExtResource("9_wr18j")
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
+
+[node name="FruitTree1" type="Sprite2D" parent="." unique_id=1557145376]
+position = Vector2(240, 139)
+texture = ExtResource("11_qwutr")
 
 [connection signal="area_entered" from="Robot/Area2D_for_reception" to="Robot" method="_on_area_2d_for_reception_area_entered"]
