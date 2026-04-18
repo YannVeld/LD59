@@ -1,24 +1,33 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
+const SPEED = 50.0
+var direction = 'right' 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("move_down"):
+		direction = 'down' 
+	if Input.is_action_just_pressed("move_up"):
+		direction = 'up' 
+	if Input.is_action_just_pressed("move_left"):
+		direction = 'left' 
+	if Input.is_action_just_pressed("move_right"):
+		direction = 'right' 
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if direction == 'up':
+		velocity.y = -SPEED
+		velocity.x = 0
+	if direction == 'down':
+		velocity.y = SPEED
+		velocity.x = 0
+	if direction == 'right':
+		velocity.x = SPEED
+		velocity.y = 0
+	if direction == 'left':
+		velocity.x = -SPEED
+		velocity.y=0
 
 	move_and_slide()
