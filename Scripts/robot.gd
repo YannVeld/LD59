@@ -34,7 +34,6 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
 	
-
 func _on_area_2d_for_reception_area_entered(area: Area2D) -> void:
 	direction = area.instruction
 	

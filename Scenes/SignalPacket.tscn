@@ -11,8 +11,9 @@
 radius = 5.0
 
 [node name="SignalPacket" type="Area2D" unique_id=644848119]
+collision_mask = 4
 script = ExtResource("1_6bd5y")
-sprites = Dictionary[String, Texture2D]({
+sprites = Dictionary[String, CompressedTexture2D]({
 "": ExtResource("6_ctvqe"),
 "down": ExtResource("2_7anpm"),
 "left": ExtResource("4_ctvqe"),
@@ -26,3 +27,6 @@ texture = ExtResource("6_ctvqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460794897]
 shape = SubResource("CircleShape2D_6bd5y")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

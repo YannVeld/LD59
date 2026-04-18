@@ -18,3 +18,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += SPEED*direction*delta
 	return
+
+func _on_body_entered(body: Node2D) -> void:
+	queue_free()
