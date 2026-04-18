@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c64rq3wsklbjo"]
 
-[ext_resource type="PackedScene" uid="uid://bkuls74tm43dw" path="res://game_manager.tscn" id="1_3opl0"]
+[ext_resource type="PackedScene" uid="uid://bkuls74tm43dw" path="res://Scenes/game_manager.tscn" id="1_3opl0"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_3opl0"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_dc5vx"]
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="4_s8oj7"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://blh22dv3vlfra" path="res://Sprites/Radiotower.png" id="8_4ou0f"]
 [ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="9_4k5bj"]
 [ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="10_hp87d"]
-[ext_resource type="PackedScene" uid="uid://ec46je58h8c0" path="res://signal_absorber.tscn" id="11_3opl0"]
+[ext_resource type="PackedScene" uid="uid://ec46je58h8c0" path="res://Scenes/signal_absorber.tscn" id="11_3opl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
