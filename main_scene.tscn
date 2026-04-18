@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="5_66tet"]
 [ext_resource type="Texture2D" uid="uid://jg7vkbyvcha6" path="res://Sprites/yellowCircle.png" id="6_hq1ik"]
 [ext_resource type="Texture2D" uid="uid://cpf5srwqavjbr" path="res://Sprites/redSquare.png" id="7_7ycvg"]
+[ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="7_nfk4m"]
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
@@ -1206,6 +1207,11 @@ script = ExtResource("8_7ycvg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Transmitter" unique_id=311778844]
 texture = ExtResource("7_7ycvg")
+
+[node name="AimGuide" type="Line2D" parent="." unique_id=245342479]
+width = 5.0
+default_color = Color(0.22352941, 0.60784316, 1, 0.40392157)
+script = ExtResource("7_nfk4m")
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
 
