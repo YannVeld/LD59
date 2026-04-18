@@ -8,8 +8,15 @@ var SignalPacketInstance
 
 @onready var dish = $"./DishSprite"
 
+@export
+var disable_aimguide = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if disable_aimguide:
+		$AimGuide.queue_free()
+
+		 
 	pass # Replace with function body.
 
 func _input(event) -> void:
