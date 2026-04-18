@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="7_nfk4m"]
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
 [ext_resource type="Texture2D" uid="uid://cu8g0c08nsjog" path="res://Sprites/TowerDish.png" id="8_wr18j"]
-[ext_resource type="Script" uid="uid://cl46k24n6f784" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
+[ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
