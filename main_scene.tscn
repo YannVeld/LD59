@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="5_8mm7a"]
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="5_66tet"]
 [ext_resource type="Texture2D" uid="uid://b75pa3pefkgs5" path="res://Sprites/Robot_walk.png" id="6_7ycvg"]
-[ext_resource type="Texture2D" uid="uid://cpf5srwqavjbr" path="res://Sprites/redSquare.png" id="7_7ycvg"]
-[ext_resource type="Script" path="res://Scripts/aim_guide.gd" id="7_nfk4m"]
+[ext_resource type="Texture2D" uid="uid://blh22dv3vlfra" path="res://Sprites/Radiotower.png" id="7_66tet"]
+[ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="7_nfk4m"]
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
+[ext_resource type="Texture2D" uid="uid://cu8g0c08nsjog" path="res://Sprites/TowerDish.png" id="8_wr18j"]
+[ext_resource type="Script" uid="uid://cl46k24n6f784" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
@@ -1296,16 +1298,23 @@ position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_0f027")
 
 [node name="Transmitter" type="Node2D" parent="." unique_id=1748364256]
-position = Vector2(21, 160)
+position = Vector2(13, 156)
 script = ExtResource("8_7ycvg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Transmitter" unique_id=311778844]
-texture = ExtResource("7_7ycvg")
-
-[node name="AimGuide" type="Line2D" parent="." unique_id=245342479]
-width = 5.0
-default_color = Color(0.22352941, 0.60784316, 1, 0.40392157)
+[node name="AimGuide" type="Line2D" parent="Transmitter" unique_id=245342479]
+position = Vector2(-13, -156)
+width = 1.0
+default_color = Color(0.26666668, 0.5803922, 0.5372549, 1)
 script = ExtResource("7_nfk4m")
+
+[node name="TowerSprite" type="Sprite2D" parent="Transmitter" unique_id=311778844]
+texture = ExtResource("7_66tet")
+
+[node name="DishSprite" type="Sprite2D" parent="Transmitter" unique_id=2109981275]
+position = Vector2(0, -7)
+texture = ExtResource("8_wr18j")
+offset = Vector2(4, -4)
+script = ExtResource("9_wr18j")
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
 
