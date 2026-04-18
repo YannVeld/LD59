@@ -1265,8 +1265,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
-size = Vector2(11, 3)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
+size = Vector2(10, 10)
 
 [node name="Node2D" type="Node2D" unique_id=1798613870]
 
@@ -1282,7 +1282,7 @@ tile_map_data = PackedByteArray("AAAHAAgAAQAFAAMAAAACAAQAAQADAAAAAAADAAQAAQAEAAA
 tile_set = SubResource("TileSet_nfk4m")
 
 [node name="Robot" type="Node2D" parent="." unique_id=263144470]
-position = Vector2(49, 92)
+position = Vector2(47, 127)
 script = ExtResource("5_66tet")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Robot" unique_id=939950865]
@@ -1291,11 +1291,15 @@ autoplay = "default"
 frame = 4
 frame_progress = 0.96403325
 
-[node name="Area2D" type="Area2D" parent="Robot" unique_id=1179396589]
+[node name="RayCast2D" type="RayCast2D" parent="Robot" unique_id=825341144]
+position = Vector2(1, 7)
+target_position = Vector2(6, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot/Area2D" unique_id=500642877]
-position = Vector2(0.5, 7)
-shape = SubResource("RectangleShape2D_0f027")
+[node name="Area2D_for_reception" type="Area2D" parent="Robot" unique_id=1694792865]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot/Area2D_for_reception" unique_id=1427031460]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_66tet")
 
 [node name="Transmitter" type="Node2D" parent="." unique_id=1748364256]
 position = Vector2(13, 156)
@@ -1318,5 +1322,4 @@ script = ExtResource("9_wr18j")
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
 
-[connection signal="area_entered" from="Robot/Area2D" to="Robot" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Robot/Area2D" to="Robot" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Robot/Area2D_for_reception" to="Robot" method="_on_area_2d_for_reception_area_entered"]
