@@ -5,6 +5,7 @@ const LENGTH_RAYCAST = 8.
 var direction = 'null'
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _process(delta: float) -> void:
@@ -26,11 +27,14 @@ func _process(delta: float) -> void:
 		ray_cast_2d.target_position = Vector2(0,1)*LENGTH_RAYCAST*0.5
 	if direction == 'right':
 		position.x += SPEED*delta
+		animated_sprite_2d.flip_h = true
 		ray_cast_2d.target_position = Vector2(1,0)*LENGTH_RAYCAST
 	if direction == 'left':
 		position.x += -SPEED*delta
+		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
 	
 
 func _on_area_2d_for_reception_area_entered(area: Area2D) -> void:
 	direction = area.instruction
+	

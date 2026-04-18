@@ -104,7 +104,7 @@ script = ExtResource("1_2vrla")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914471792]
 sprite_frames = SubResource("SpriteFrames_vimvf")
 autoplay = "default"
-frame_progress = 0.97523504
+frame_progress = 0.41351366
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=352001469]
 position = Vector2(1, 7)

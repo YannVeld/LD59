@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c3r7c3841k0r6"]
+[gd_scene format=4 uid="uid://c3r7c3841k0r6"]
 
 [ext_resource type="Script" uid="uid://wdeln8oy0ae2" path="res://Scripts/game_menu.gd" id="1_qus6b"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_tklej"]
@@ -1172,7 +1172,7 @@ sources/1 = SubResource("TileSetAtlasSource_66tet")
 script = ExtResource("1_qus6b")
 
 [node name="Paths" type="TileMapLayer" parent="." unique_id=338462752]
-tile_map_data = PackedByteArray(0, 0, 6, 0, 6, 0, 1, 0, 0, 0, 3, 0, 0, 0, 15, 0, 5, 0, 1, 0, 2, 0, 3, 0, 0, 0, 13, 0, 4, 0, 1, 0, 1, 0, 3, 0, 0, 0, 13, 0, 7, 0, 1, 0, 0, 0, 3, 0, 0, 0, 5, 0, 7, 0, 1, 0, 1, 0, 3, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAGAAYAAQAAAAMAAAAPAAUAAQACAAMAAAANAAQAAQABAAMAAAANAAcAAQAAAAMAAAAFAAcAAQABAAMAAAAHAAQAAQACAAMAAAA=")
 tile_set = SubResource("TileSet_nfk4m")
 
 [node name="Robot" parent="." unique_id=785140858 instance=ExtResource("4_pbvm6")]
