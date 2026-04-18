@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://kp0ke4eklawt"]
+[gd_scene format=3 uid="uid://cmyiis26cf7hl"]
 
+[ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_7cbgm"]
 [ext_resource type="Texture2D" uid="uid://novapj26cr87" path="res://Sprites/FruitTree1_short.png" id="1_dxmdv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb2op"]
+shader = ExtResource("1_7cbgm")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
 size = Vector2(17, 26)
@@ -8,6 +15,7 @@ size = Vector2(17, 26)
 [node name="FruitTree" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
+material = SubResource("ShaderMaterial_pb2op")
 texture = ExtResource("1_dxmdv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]

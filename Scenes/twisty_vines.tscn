@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://2uj5smrkndef"]
+[gd_scene format=3 uid="uid://csdok253tnkql"]
 
-[ext_resource type="Texture2D" uid="uid://cdajvsaprkkqp" path="res://Sprites/TwistyVines_smallest.png" id="1_87spc"]
+[ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_pqci5"]
+[ext_resource type="Texture2D" uid="uid://dlmmovdo7knnh" path="res://Sprites/TwistyVines_blue.png" id="2_jbqv5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2efc"]
+shader = ExtResource("1_pqci5")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
 size = Vector2(29, 24)
@@ -8,7 +15,8 @@ size = Vector2(29, 24)
 [node name="TwistVine" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
-texture = ExtResource("1_87spc")
+material = SubResource("ShaderMaterial_r2efc")
+texture = ExtResource("2_jbqv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]
 position = Vector2(2, -3)
