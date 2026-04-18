@@ -6,6 +6,8 @@ var mouse_position
 var SignalPacketScene = preload("res://Scenes/SignalPacket.tscn")
 var SignalPacketInstance
 
+@onready var dish = $"./DishSprite"
+
 @export
 var disable_aimguide = false
 
@@ -33,8 +35,8 @@ func _input(event) -> void:
 			mouse_position = get_viewport().get_mouse_position()
 			SignalPacketInstance = SignalPacketScene.instantiate()
 			SignalPacketInstance.instruction = direction
-			SignalPacketInstance.direction = ((mouse_position - self.position).normalized())
-			SignalPacketInstance.position = self.position
+			SignalPacketInstance.direction = ((mouse_position - dish.global_position).normalized())
+			SignalPacketInstance.position = dish.global_position
 			$"../SignalPackets".add_child(SignalPacketInstance)
 	return 
 	
