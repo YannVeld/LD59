@@ -10,7 +10,9 @@
 script = ExtResource("1_7n4aq")
 
 [node name="AimGuide" type="Line2D" parent="." unique_id=1247686096]
+z_index = 5
 position = Vector2(-13, -156)
+points = PackedVector2Array(1763, 967)
 width = 1.0
 default_color = Color(0.26666668, 0.5803922, 0.5372549, 1)
 script = ExtResource("2_64nqp")

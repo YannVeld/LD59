@@ -133,6 +133,7 @@ animations = [{
 }]
 
 [node name="Robot" type="Area2D" unique_id=848888713]
+z_index = 1
 script = ExtResource("1_2vrla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872788905]

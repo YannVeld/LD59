@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0u2dtg0u8l53"]
+
+[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_lyoih"]
+
+[node name="Level" unique_id=1798613870 instance=ExtResource("1_lyoih")]
+
+[node name="PauseScreen" parent="." index="7" unique_id=1965419860]
+visible = false
