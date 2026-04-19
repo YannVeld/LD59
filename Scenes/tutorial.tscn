@@ -86,5 +86,9 @@ one_shot = true
 [node name="KeysTimer" type="Timer" parent="." unique_id=716445574]
 one_shot = true
 
+[node name="Timer" type="Timer" parent="." unique_id=1361189005]
+one_shot = true
+
 [connection signal="timeout" from="mouseTimer" to="." method="_on_mouse_timer_timeout"]
 [connection signal="timeout" from="KeysTimer" to="." method="_on_keys_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
