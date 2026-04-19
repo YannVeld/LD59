@@ -44,6 +44,7 @@ func _collect_item(item: Collectable) -> void:
 	animated_sprite_2d.set_animation('jump')
 	last_item_collected = item.item_name
 	particle_timer.start()
+	item.already_collected = true
 	
 
 func _get_bounce_direction() -> String:
@@ -98,7 +99,8 @@ func _on_area_entered(area: Area2D) -> void:
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE
 	if area.is_in_group("Collectibles"):
-		_collect_item(area)
+		if not area.already_collected:
+			_collect_item(area)
 	if area.name=="LandingZone":
 		landing_zone_entered.emit()
 	pass # Replace with function body.
