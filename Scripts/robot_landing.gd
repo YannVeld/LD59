@@ -8,7 +8,7 @@ extends Node2D
 const START_Y: float = -16.0
 const INIT_FALL_SPEED: float = 80.0
 const MIN_FALL_SPEED: float = 1.0
-const DECELERATION: float = 18.0
+const DECELERATION: float = 16.0
 
 const READY_LEGS_DIST: float = 16.0
 
