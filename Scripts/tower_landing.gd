@@ -12,9 +12,12 @@ const DECELERATION: float = 0.0
 
 const WAIT_AFTER_LANDING: float = 1.0
 
+
+
 var _speed: float = INIT_FALL_SPEED
 var _has_landed: bool = false
 var _time_since_landing: float = 0.0
+
 
 var is_on_last_frame: bool:
 	get: return _my_animator.frame >= _my_animator.sprite_frames.get_frame_count("default") - 1
@@ -24,6 +27,7 @@ func _ready() -> void:
 	position = Vector2(_transmitter.position.x, START_Y)
 	_transmitter.set_process(false)
 	_transmitter.visible = false
+
 
 func _do_fall(delta: float) -> void:
 	if _has_landed: return
