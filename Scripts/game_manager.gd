@@ -6,7 +6,7 @@ extends Node
 @onready var landing_zone: Area2D = $"../LandingZone"
 signal mission_accomplished
 @onready var animation_wait_timer: Timer = $AnimationWaitTimer
-
+@onready var robot_takeoff: RobotTakeoff = $"../RobotTakeoff"
 
 var collection_status = Vector3(0,0,0)
 var objectives_complete = false
@@ -34,13 +34,20 @@ func _on_robot_item_collected(name) -> void:
 		animation_wait_timer.start()
 		
 func do_level_over():
-	get_tree().change_scene_to_file("res://game_menu.tscn")
+	robot.set_process(false)
+	robot.visible = false
+	robot_takeoff.start_takeoff()
 
 func _on_robot_landing_zone_entered() -> void:
 	print("Landing zone entered")
 	if objectives_complete:
 		"level over"
 		do_level_over()
+		
 
 func _on_animation_wait_timer_timeout() -> void:
 	mission_accomplished.emit(robot.position)
+
+
+func _on_robot_takeoff_takeoff_complete() -> void:
+	get_tree().change_scene_to_file("res://game_menu.tscn")
