@@ -11,7 +11,7 @@
 radius = 5.0
 
 [node name="SignalPacket" type="Area2D" unique_id=644848119]
-collision_mask = 4
+collision_mask = 12
 script = ExtResource("1_6bd5y")
 sprites = Dictionary[String, CompressedTexture2D]({
 "": ExtResource("6_ctvqe"),
