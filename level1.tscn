@@ -1199,10 +1199,10 @@ tile_map_data = PackedByteArray("AAAHAAgAAQAFAAMAAAACAAQAAQADAAAAAAADAAQAAQAEAAA
 tile_set = ExtResource("5_xy4tn")
 
 [node name="FruitTree" parent="." index="8" unique_id=1765231128 instance=ExtResource("11_eqrsh")]
-position = Vector2(244, 137)
+position = Vector2(248, 156)
 
 [node name="BigMushroom" parent="." index="9" unique_id=1965203686 instance=ExtResource("8_hx44q")]
-position = Vector2(274, 28)
+position = Vector2(274, 35)
 
 [node name="TwistVine" parent="." index="10" unique_id=1354608554 instance=ExtResource("12_3l65w")]
 position = Vector2(26, 29)

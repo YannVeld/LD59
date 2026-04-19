@@ -28,10 +28,10 @@ position = Vector2(10, 56.000004)
 visible = false
 
 [node name="BigMushroom" parent="." index="12" unique_id=1765231128 instance=ExtResource("8_mw4xc")]
-position = Vector2(277, 149)
+position = Vector2(277, 159)
 
 [node name="FruitTree" parent="." index="13" unique_id=451874510 instance=ExtResource("6_dc5vx")]
-position = Vector2(287, 31)
+position = Vector2(289, 48)
 
 [node name="TwistVine" parent="." index="14" unique_id=1508044459 instance=ExtResource("7_s8oj7")]
 position = Vector2(146, 82)

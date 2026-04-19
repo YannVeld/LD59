@@ -19,8 +19,9 @@ script = ExtResource("1_kenbi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
 material = SubResource("ShaderMaterial_pb2op")
+position = Vector2(0, -7)
 texture = ExtResource("2_406iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]
-position = Vector2(-0.5, 10)
+position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_671wp")
