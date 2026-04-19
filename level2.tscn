@@ -9,6 +9,10 @@
 [node name="SignalAbsorber" parent="." index="5" unique_id=1952546217 groups=["Signal Absorbers"] instance=ExtResource("2_6q4t8")]
 position = Vector2(97, 107)
 
-[node name="Mirror" parent="." index="6" unique_id=854360054 instance=ExtResource("3_8tcn8")]
-position = Vector2(154, 116)
-rotation = 2.7281404
+[node name="Mirror2" parent="." index="6" unique_id=1549787990 instance=ExtResource("3_8tcn8")]
+position = Vector2(70.000015, 89)
+rotation = 1.9295107
+
+[node name="Mirror" parent="." index="7" unique_id=854360054 instance=ExtResource("3_8tcn8")]
+position = Vector2(37, 48)
+rotation = 7.688457

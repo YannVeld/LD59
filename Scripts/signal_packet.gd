@@ -24,4 +24,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Signal Absorbers"):
 		queue_free()
 	if body.is_in_group("Mirrors"):
-		print('Hit Mirror!')
+		reflect(body)
+		
+func reflect(mirror):
+	var d = Vector2(cos(mirror.rotation), sin(mirror.rotation))
+	if direction.dot(d)<0:
+		direction = direction-2*direction.dot(d)*d

@@ -21,9 +21,17 @@ func draw_next_segment(start_point, heading) -> void:
 		return
 	else:
 		add_point(result["position"])
+		var body = result["collider"]
+		if body.is_in_group("Mirrors"):
+			var d = Vector2(cos(body.rotation), sin(body.rotation))
+			if heading.dot(d)<0:
+				heading = heading-2*heading.dot(d)*d
+				draw_next_segment(result["position"], heading)
 		return
 		
+		#
 
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	clear_points()
