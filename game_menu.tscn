@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://wdeln8oy0ae2" path="res://Scripts/game_menu.gd" id="1_qus6b"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_tklej"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_scae6"]
-[ext_resource type="PackedScene" uid="uid://dde0yw0nht43x" path="res://Scenes/robot.tscn" id="4_pbvm6"]
+[ext_resource type="PackedScene" uid="uid://558eptq6setq" path="res://Scenes/robot.tscn" id="4_pbvm6"]
 [ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="5_xxfb2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
@@ -1159,6 +1159,26 @@ texture = ExtResource("3_scae6")
 5:3/0/terrain = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0/terrains_peering_bit/top_side = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+3:2/0 = 0
+4:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_nfk4m"]
 physics_layer_0/collision_layer = 1
@@ -1172,7 +1192,7 @@ sources/1 = SubResource("TileSetAtlasSource_66tet")
 script = ExtResource("1_qus6b")
 
 [node name="Paths" type="TileMapLayer" parent="." unique_id=338462752]
-tile_map_data = PackedByteArray("AAAGAAYAAQAAAAMAAAAPAAUAAQACAAMAAAANAAQAAQABAAMAAAANAAcAAQAAAAMAAAAFAAcAAQABAAMAAAAHAAQAAQACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAGAAYAAQAAAAMAAAAPAAUAAQABAAYAAAANAAQAAQABAAMAAAANAAcAAQAAAAMAAAAFAAcAAQABAAMAAAAHAAQAAQABAAYAAAACAAIAAQAAAAQAAAACAAMAAQAAAAQAAAADAAIAAQAAAAQAAAABAAEAAQAAAAQAAAAEAAEAAQAAAAQAAAAEAAMAAQAAAAQAAAABAAQAAQAAAAQAAAAPAAEAAQABAAQAAAAPAAIAAQABAAQAAAAOAAIAAQABAAQAAAAQAAMAAQABAAQAAAARAAIAAQABAAQAAAARAAQAAQABAAQAAAARAAkAAQABAAUAAAASAAoAAQABAAUAAAASAAkAAQABAAUAAAARAAgAAQABAAUAAAAQAAcAAQABAAUAAAATAAgAAQABAAUAAAAQAAoAAQABAAUAAAAIAAIAAQAAAAYAAAALAAEAAQAAAAYAAAA=")
 tile_set = SubResource("TileSet_nfk4m")
 
 [node name="Robot" parent="." unique_id=785140858 instance=ExtResource("4_pbvm6")]

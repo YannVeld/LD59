@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://bdsdfvoeimk7j"]
+[gd_resource type="TileSet" format=3 uid="uid://d4h3vg5fllrxf"]
 
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="1_4v1nc"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="2_7op6y"]
@@ -1161,6 +1161,22 @@ texture = ExtResource("2_7op6y")
 4:2/0 = 0
 1:4/0 = 0
 0:4/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+5:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+0:6/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
