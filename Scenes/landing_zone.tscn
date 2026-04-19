@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6gpbr0gwsne"]
 
 [ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_0xqwa"]
-[ext_resource type="Script" path="res://Scripts/landing_zone.gd" id="1_e5e2q"]
+[ext_resource type="Script" uid="uid://hip8p2t4oyyc" path="res://Scripts/landing_zone.gd" id="1_e5e2q"]
 [ext_resource type="Texture2D" uid="uid://bssexo2kgcgmw" path="res://Sprites/BurntGrassPatch.png" id="3_e5e2q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5e2q"]
@@ -12,7 +12,7 @@ shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0430f"]
-radius = 11.0
+radius = 3.0
 
 [node name="LandingZone" type="Area2D" unique_id=799687337]
 script = ExtResource("1_e5e2q")
