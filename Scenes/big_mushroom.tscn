@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://4tfqfu7ls7vo"]
+
+[ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_406iy"]
+[ext_resource type="Texture2D" uid="uid://tcdahhk71xti" path="res://Sprites/BigMushroom.png" id="2_406iy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb2op"]
+shader = ExtResource("1_406iy")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.4249801, 0.3078, 0.81, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
+size = Vector2(17, 26)
+
+[node name="BigMushroom" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
+material = SubResource("ShaderMaterial_pb2op")
+texture = ExtResource("2_406iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433941124]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_671wp")
