@@ -13,3 +13,5 @@ func _process(delta: float) -> void:
 func turn_on_shader():
 	$Sprite2D.material.set_shader_parameter('do_blinking', true)
 	
+func _on_circle_renderer_phone_home() -> void:
+	turn_on_shader()

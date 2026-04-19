@@ -1240,3 +1240,4 @@ text = "6"
 
 [connection signal="pressed" from="Level buttons/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level buttons/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Level buttons/Button3" to="." method="_on_button_3_pressed"]

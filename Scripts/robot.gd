@@ -108,3 +108,6 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_particle_timer_timeout() -> void:
 	_play_item_collect_particle(last_item_collected)
+	
+	
+	

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xwd3d6ogcad7" path="res://Scenes/tower_landing.tscn" id="6_djkc3"]
 [ext_resource type="Script" uid="uid://dp1phmxmb4uj3" path="res://Scripts/pause_screen.gd" id="7_e21v8"]
 [ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="7_jj470"]
+[ext_resource type="Script" uid="uid://cwbkkrb40j46t" path="res://Scripts/circle_renderer.gd" id="8_747y3"]
 
 [node name="Level" type="Node2D" unique_id=1798613870]
 
@@ -57,7 +58,12 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Main menu"
 
+[node name="CircleRenderer" type="Node2D" parent="." unique_id=643020099]
+script = ExtResource("8_747y3")
+
+[connection signal="mission_accomplished" from="GameManager" to="CircleRenderer" method="_on_game_manager_mission_accomplished"]
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
 [connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
 [connection signal="landing_animation_finished" from="TowerLanding" to="Transmitter" method="_on_tower_landing_landing_animation_finished"]
 [connection signal="pressed" from="PauseScreen/VBoxContainer/MainMenuButton" to="PauseScreen" method="_on_main_menu_button_pressed"]
+[connection signal="phoneHome" from="CircleRenderer" to="LandingZone" method="_on_circle_renderer_phone_home"]
