@@ -5,6 +5,7 @@ var instruction: String = ""
 @export
 var direction: Vector2
 const SPEED = 400.
+const MIRROR_ANGLE=PI/4.
 
 @export var sprites: Dictionary[String, CompressedTexture2D] = {"": null, "down": null, "up": null, "left": null, "right": null}
 
@@ -27,6 +28,6 @@ func _on_body_entered(body: Node2D) -> void:
 		reflect(body)
 		
 func reflect(mirror):
-	var d = Vector2(cos(mirror.rotation), sin(mirror.rotation))
+	var d = Vector2(cos(mirror.rotation+MIRROR_ANGLE), sin(mirror.rotation+MIRROR_ANGLE))
 	if direction.dot(d)<0:
 		direction = direction-2*direction.dot(d)*d

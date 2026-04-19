@@ -7,6 +7,8 @@ var dish = $"../DishSprite"
 var start_point 
 var heading
 
+const MIRROR_ANGLE=PI/4.
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	return	
@@ -23,7 +25,7 @@ func draw_next_segment(start_point, heading) -> void:
 		add_point(result["position"])
 		var body = result["collider"]
 		if body.is_in_group("Mirrors"):
-			var d = Vector2(cos(body.rotation), sin(body.rotation))
+			var d = Vector2(cos(body.rotation+MIRROR_ANGLE), sin(body.rotation+MIRROR_ANGLE))
 			if heading.dot(d)<0:
 				heading = heading-2*heading.dot(d)*d
 				draw_next_segment(result["position"], heading)
