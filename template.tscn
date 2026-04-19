@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://e0tc27vt1it4"]
+
+[ext_resource type="PackedScene" uid="uid://pp473fcoac01" path="res://Scenes/game_manager.tscn" id="2_ph1qb"]
+[ext_resource type="PackedScene" uid="uid://c6gpbr0gwsne" path="res://Scenes/landing_zone.tscn" id="5_5rw1d"]
+[ext_resource type="PackedScene" uid="uid://558eptq6setq" path="res://Scenes/robot.tscn" id="6_15ml2"]
+[ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="7_jj470"]
+
+[node name="Level" type="Node2D" unique_id=1798613870]
+
+[node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("2_ph1qb")]
+
+[node name="LandingZone" parent="." unique_id=799687337 instance=ExtResource("5_5rw1d")]
+position = Vector2(40, 163)
+
+[node name="Robot" parent="." unique_id=932874256 instance=ExtResource("6_15ml2")]
+position = Vector2(40, 158)
+
+[node name="Transmitter" parent="." unique_id=1011246198 instance=ExtResource("7_jj470")]
+position = Vector2(13, 156)
+
+[node name="SignalPackets" type="Node" parent="." unique_id=942323314]
+
+[connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
+[connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
