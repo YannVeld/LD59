@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6gpbr0gwsne"]
 
 [ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_0xqwa"]
-[ext_resource type="Script" uid="uid://hip8p2t4oyyc" path="res://Scripts/landing_zone.gd" id="1_e5e2q"]
-[ext_resource type="Texture2D" uid="uid://jg7vkbyvcha6" path="res://Sprites/yellowCircle.png" id="2_0xqwa"]
+[ext_resource type="Script" path="res://Scripts/landing_zone.gd" id="1_e5e2q"]
+[ext_resource type="Texture2D" uid="uid://bssexo2kgcgmw" path="res://Sprites/BurntGrassPatch.png" id="3_e5e2q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5e2q"]
 shader = ExtResource("1_0xqwa")
@@ -11,15 +11,15 @@ shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_42l1d"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0430f"]
+radius = 11.0
 
 [node name="LandingZone" type="Area2D" unique_id=799687337]
 script = ExtResource("1_e5e2q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099947571]
 material = SubResource("ShaderMaterial_e5e2q")
-texture = ExtResource("2_0xqwa")
+texture = ExtResource("3_e5e2q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057932904]
-shape = SubResource("RectangleShape2D_42l1d")
+shape = SubResource("CircleShape2D_0430f")

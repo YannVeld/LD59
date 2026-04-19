@@ -4,6 +4,7 @@ extends Node2D
 @onready var _my_shadow_animator: AnimatedSprite2D = get_node("./ShadowSprite")
 
 @onready var _robot = get_node("../Robot")
+@onready var _landing_zone = get_node("../LandingZone")
 
 const START_Y: float = -16.0
 const INIT_FALL_SPEED: float = 80.0
@@ -27,6 +28,8 @@ func _ready() -> void:
 	_robot.set_process(false)
 	_robot.visible = false
 	_initial_rotation = _my_animator.rotation
+	
+	_landing_zone.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -51,4 +54,5 @@ func _process(delta: float) -> void:
 	if _dist <= 0.0:
 		_robot.set_process(true)
 		_robot.visible = true
+		_landing_zone.visible = true
 		queue_free()
