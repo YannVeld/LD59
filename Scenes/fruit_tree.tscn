@@ -5,6 +5,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb2op"]
 shader = ExtResource("1_7cbgm")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.4249801, 0.3078, 0.81, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_671wp"]
 size = Vector2(17, 26)
