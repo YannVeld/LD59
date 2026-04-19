@@ -6,19 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="4_0cioi"]
 [ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="5_2lej0"]
 
-[node name="Transmitter" type="Node2D" unique_id=910806447]
+[node name="Transmitter" type="Node2D" unique_id=1011246198]
 script = ExtResource("1_7n4aq")
 
-[node name="AimGuide" type="Line2D" parent="." unique_id=1986491908]
+[node name="AimGuide" type="Line2D" parent="." unique_id=1247686096]
 position = Vector2(-13, -156)
 width = 1.0
 default_color = Color(0.26666668, 0.5803922, 0.5372549, 1)
 script = ExtResource("2_64nqp")
 
-[node name="TowerSprite" type="Sprite2D" parent="." unique_id=936758530]
+[node name="TowerSprite" type="Sprite2D" parent="." unique_id=1209487833]
 texture = ExtResource("3_rvwfv")
 
-[node name="DishSprite" type="Sprite2D" parent="." unique_id=1279696046]
+[node name="DishSprite" type="Sprite2D" parent="." unique_id=266685894]
 position = Vector2(0, -7)
 texture = ExtResource("4_0cioi")
 offset = Vector2(4, -4)

@@ -1,16 +1,14 @@
 [gd_scene format=4 uid="uid://c64rq3wsklbjo"]
 
-[ext_resource type="PackedScene" uid="uid://bkuls74tm43dw" path="res://Scenes/game_manager.tscn" id="1_3opl0"]
+[ext_resource type="PackedScene" uid="uid://pp473fcoac01" path="res://Scenes/game_manager.tscn" id="1_qulpo"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_3opl0"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_dc5vx"]
-[ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="4_s8oj7"]
-[ext_resource type="Texture2D" uid="uid://b75pa3pefkgs5" path="res://Sprites/Robot_walk.png" id="5_mw4xc"]
-[ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="6_r8rrl"]
-[ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="7_lwvnx"]
-[ext_resource type="Texture2D" uid="uid://blh22dv3vlfra" path="res://Sprites/Radiotower.png" id="8_4ou0f"]
-[ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="9_4k5bj"]
-[ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="10_hp87d"]
-[ext_resource type="PackedScene" uid="uid://ec46je58h8c0" path="res://Scenes/signal_absorber.tscn" id="11_3opl0"]
+[ext_resource type="PackedScene" uid="uid://dde0yw0nht43x" path="res://Scenes/robot.tscn" id="4_jifot"]
+[ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="5_3opl0"]
+[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="6_dc5vx"]
+[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="7_s8oj7"]
+[ext_resource type="PackedScene" path="res://Scenes/big_mushroom.tscn" id="8_mw4xc"]
+[ext_resource type="PackedScene" uid="uid://c6gpbr0gwsne" path="res://Scenes/landing_zone.tscn" id="12_dc5vx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
@@ -1165,6 +1163,8 @@ texture = ExtResource("3_dc5vx")
 5:3/0/terrain = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+4:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_nfk4m"]
 physics_layer_0/collision_layer = 1
@@ -1174,156 +1174,37 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_hq1ik")
 sources/1 = SubResource("TileSetAtlasSource_66tet")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(0, 0, 24, 24)
+[node name="Level" type="Node2D" unique_id=1798613870]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwutr"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_671wp"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mo76n"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_42l1d"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(96, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jcla"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(120, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m35m6"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(144, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0ygc"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(168, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7th4q"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(192, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6jybn"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(216, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_84odl"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(240, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ak604"]
-atlas = ExtResource("5_mw4xc")
-region = Rect2(264, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vimvf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wr18j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qwutr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_671wp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mo76n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_42l1d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2jcla")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m35m6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u0ygc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7th4q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6jybn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_84odl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ak604")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
-size = Vector2(10, 10)
-
-[node name="Node2D" type="Node2D" unique_id=1798613870]
-
-[node name="GameManager" parent="." unique_id=641408125 instance=ExtResource("1_3opl0")]
+[node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("1_qulpo")]
 
 [node name="Paths" type="TileMapLayer" parent="." unique_id=338462752]
-tile_map_data = PackedByteArray("AAACAAUAAQAAAAMAAAACAAYAAQAAAAMAAAAEAAgAAQAAAAMAAAAFAAgAAQAAAAMAAAAJAAgAAQAAAAMAAAANAAgAAQAAAAMAAAAOAAYAAQAAAAMAAAAQAAUAAQAAAAMAAAAPAAEAAQAAAAMAAAAJAAEAAQAAAAMAAAACAAIAAQAAAAMAAAAFAAEAAQAAAAMAAAAIAAQAAQAAAAMAAAAGAAQAAQAAAAMAAAAGAAYAAQAAAAMAAAAMAAUAAQAAAAMAAAAMAAIAAQAAAAMAAAAGAAgAAQABAAMAAAADAAMAAQABAAMAAAAIAAEAAQABAAMAAAALAAQAAQABAAMAAAARAAcAAQABAAMAAAAPAAUAAQACAAMAAAANAAEAAQACAAMAAAAMAAgAAQACAAMAAAAIAAcAAQACAAMAAAAGAAMAAQACAAMAAAACAAEAAQADAAMAAAADAAAAAQADAAMAAAAOAAAAAQADAAMAAAA=")
+tile_map_data = PackedByteArray("AAACAAUAAQAAAAMAAAACAAYAAQAAAAMAAAAEAAgAAQAAAAMAAAAFAAgAAQAAAAMAAAAJAAgAAQAAAAMAAAANAAgAAQAAAAMAAAAOAAYAAQAAAAMAAAAQAAUAAQAAAAMAAAAPAAEAAQAAAAMAAAAJAAEAAQAAAAMAAAAFAAEAAQAAAAMAAAAIAAQAAQAAAAMAAAAGAAQAAQAAAAMAAAAGAAYAAQAAAAMAAAAMAAUAAQAAAAMAAAAMAAIAAQAAAAMAAAAGAAgAAQABAAMAAAADAAMAAQABAAMAAAAIAAEAAQABAAMAAAALAAQAAQABAAMAAAARAAcAAQABAAMAAAAPAAUAAQACAAMAAAANAAEAAQACAAMAAAAMAAgAAQACAAMAAAAIAAcAAQACAAMAAAAGAAMAAQACAAMAAAAOAAAAAQADAAMAAAAHAAoAAQADAAIAAAAKAAQAAQADAAIAAAASAAoAAQADAAIAAAASAAMAAQADAAIAAAALAAoAAQAEAAMAAAAEAAoAAQAEAAMAAAAAAAcAAQAEAAMAAAAEAAUAAQAEAAMAAAAQAAoAAQAEAAMAAAANAAMAAQAEAAMAAAAAAAMAAQADAAIAAAADAAEAAQADAAIAAAA=")
 tile_set = SubResource("TileSet_nfk4m")
 
 [node name="Obstacles" type="TileMapLayer" parent="." unique_id=694049642]
-tile_map_data = PackedByteArray("AAAHAAgAAQAFAAMAAAACAAQAAQADAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAFAAAAAAAEAAIAAQADAAAAAAAFAAIAAQAEAAAAAAAGAAIAAQAFAAAAAAANAAIAAQADAAAAAAAOAAIAAQAEAAAAAAAPAAIAAQAFAAAAAAAJAAIAAQABAAAAAAAKAAIAAQABAAAAAAAKAAMAAQABAAIAAAAJAAMAAQABAAIAAAALAAIAAQACAAAAAAALAAMAAQACAAIAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAIAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAEAAAAJAAcAAQAAAAIAAAAKAAcAAQABAAIAAAALAAYAAQACAAEAAAALAAUAAQACAAAAAAAKAAUAAQABAAAAAAAKAAYAAQADAAEAAAALAAcAAQACAAIAAAAEAAcAAQACAAIAAAADAAcAAQADAAAAAAAFAAYAAQAFAAAAAAAEAAYAAQAAAAAAAAAHAAcAAQAFAAIAAAAHAAYAAQAFAAIAAAAHAAUAAQAFAAEAAAANAAcAAQAFAAMAAAANAAYAAQAFAAIAAAANAAUAAQAFAAIAAAANAAQAAQAAAAAAAAAOAAQAAQAFAAAAAAAPAAYAAQADAAAAAAAQAAYAAQACAAAAAAAQAAcAAQAFAAMAAAAQAAQAAQADAAAAAAARAAQAAQAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAAgAAQAFAAMAAAACAAQAAQADAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAFAAAAAAAEAAIAAQADAAAAAAAFAAIAAQAEAAAAAAAGAAIAAQAFAAAAAAANAAIAAQADAAAAAAAOAAIAAQAEAAAAAAAPAAIAAQAFAAAAAAAJAAIAAQABAAAAAAAKAAIAAQABAAAAAAAKAAMAAQABAAIAAAAJAAMAAQABAAIAAAALAAIAAQACAAAAAAALAAMAAQACAAIAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAIAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAEAAAAJAAcAAQAAAAIAAAAKAAcAAQABAAIAAAALAAYAAQACAAEAAAALAAUAAQACAAAAAAAKAAUAAQABAAAAAAAKAAYAAQADAAEAAAALAAcAAQACAAIAAAAEAAcAAQACAAIAAAADAAcAAQADAAAAAAAFAAYAAQAFAAAAAAAEAAYAAQAAAAAAAAAHAAcAAQAFAAIAAAAHAAYAAQAFAAIAAAAHAAUAAQAFAAEAAAANAAcAAQAFAAMAAAANAAYAAQAFAAIAAAANAAUAAQAFAAIAAAANAAQAAQAAAAAAAAAOAAQAAQAFAAAAAAAPAAYAAQADAAAAAAAQAAYAAQACAAAAAAAQAAcAAQAFAAMAAAAQAAQAAQADAAAAAAARAAQAAQAFAAAAAAD/////AQAAAAAAAAD//wAAAQAFAAIAAAD//wEAAQAFAAIAAAD//wIAAQAFAAIAAAD//wMAAQAFAAIAAAD//wQAAQAFAAIAAAD//wUAAQAFAAIAAAD//wYAAQAFAAIAAAD//wcAAQAFAAIAAAD//wgAAQAFAAIAAAD//wkAAQAFAAIAAAD//woAAQAFAAIAAAD//wsAAQAFAAIAAAD//wwAAQAAAAIAAAAAAAwAAQAEAAAAAAABAAwAAQAEAAAAAAACAAwAAQAEAAAAAAADAAwAAQAEAAAAAAAEAAwAAQAEAAAAAAAFAAwAAQAEAAAAAAAGAAwAAQAEAAAAAAAHAAwAAQAEAAAAAAAIAAwAAQAEAAAAAAAJAAwAAQAEAAAAAAAKAAwAAQAEAAAAAAALAAwAAQAEAAAAAAAMAAwAAQAEAAAAAAANAAwAAQAEAAAAAAAOAAwAAQAEAAAAAAAPAAwAAQAEAAAAAAAQAAwAAQAEAAAAAAARAAwAAQAEAAAAAAASAAwAAQAEAAAAAAATAAwAAQAEAAAAAAAUAAwAAQACAAIAAAAUAAsAAQAFAAIAAAAUAAoAAQAFAAIAAAAUAAkAAQAFAAIAAAAUAAgAAQAFAAIAAAAUAAcAAQAFAAIAAAAUAP//AQACAAAAAAAUAAAAAQAFAAIAAAAUAAEAAQAFAAIAAAAUAAIAAQAFAAIAAAAUAAMAAQAFAAIAAAAUAAQAAQAFAAIAAAAUAAUAAQAFAAIAAAAUAAYAAQAFAAIAAAATAP//AQAEAAAAAAASAP//AQAEAAAAAAARAP//AQAEAAAAAAAQAP//AQAEAAAAAAAPAP//AQAEAAAAAAAOAP//AQAEAAAAAAANAP//AQAEAAAAAAAMAP//AQAEAAAAAAALAP//AQAEAAAAAAAKAP//AQAEAAAAAAAJAP//AQAEAAAAAAAIAP//AQAEAAAAAAAHAP//AQAEAAAAAAAGAP//AQAEAAAAAAACAP//AQAEAAAAAAABAP//AQAEAAAAAAAAAP//AQAEAAAAAAAFAP//AQAEAAAAAAAEAP//AQAEAAAAAAADAP//AQAEAAAAAAA=")
 tile_set = SubResource("TileSet_nfk4m")
 
-[node name="Robot" type="Node2D" parent="." unique_id=263144470]
+[node name="Robot" parent="." unique_id=932874256 instance=ExtResource("4_jifot")]
 position = Vector2(47, 127)
-script = ExtResource("4_s8oj7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Robot" unique_id=939950865]
-sprite_frames = SubResource("SpriteFrames_vimvf")
-autoplay = "default"
-frame = 4
-frame_progress = 0.96403325
-
-[node name="RayCast2D" type="RayCast2D" parent="Robot" unique_id=825341144]
-position = Vector2(1, 7)
-target_position = Vector2(6, 0)
-
-[node name="Area2D_for_reception" type="Area2D" parent="Robot" unique_id=1694792865]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot/Area2D_for_reception" unique_id=1427031460]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_66tet")
-debug_color = Color(0.87868875, 0.14046684, 0.75721, 0.41960785)
-
-[node name="Transmitter" type="Node2D" parent="." unique_id=1748364256]
+[node name="Transmitter" parent="." unique_id=1011246198 instance=ExtResource("5_3opl0")]
 position = Vector2(13, 156)
-script = ExtResource("6_r8rrl")
 
-[node name="AimGuide" type="Line2D" parent="Transmitter" unique_id=245342479]
-position = Vector2(-13, -156)
-width = 1.0
-default_color = Color(0.26666668, 0.5803922, 0.5372549, 1)
-script = ExtResource("7_lwvnx")
+[node name="FruitTree" parent="." unique_id=1765231128 instance=ExtResource("6_dc5vx")]
+position = Vector2(241, 139)
 
-[node name="TowerSprite" type="Sprite2D" parent="Transmitter" unique_id=311778844]
-texture = ExtResource("8_4ou0f")
+[node name="TwistVine" parent="." unique_id=237942576 instance=ExtResource("7_s8oj7")]
+position = Vector2(23, 31)
 
-[node name="DishSprite" type="Sprite2D" parent="Transmitter" unique_id=2109981275]
-position = Vector2(0, -7)
-texture = ExtResource("9_4k5bj")
-offset = Vector2(4, -4)
-script = ExtResource("10_hp87d")
+[node name="BigMushroom" parent="." unique_id=1554755476 instance=ExtResource("8_mw4xc")]
+position = Vector2(271, 33)
+
+[node name="LandingZone" parent="." unique_id=799687337 instance=ExtResource("12_dc5vx")]
+position = Vector2(42, 161)
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
 
-[node name="SignalAbsorber" parent="." unique_id=1952546217 instance=ExtResource("11_3opl0")]
-position = Vector2(120, 86)
-
-[connection signal="area_entered" from="Robot/Area2D_for_reception" to="Robot" method="_on_area_2d_for_reception_area_entered"]
+[connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
+[connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]

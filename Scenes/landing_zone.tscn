@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c6gpbr0gwsne"]
+
+[ext_resource type="Texture2D" uid="uid://cq8ortjlk46mf" path="res://Sprites/greenSquare.png" id="1_u4bsb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42l1d"]
+size = Vector2(16, 16)
+
+[node name="LandingZone" type="Area2D" unique_id=799687337]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099947571]
+texture = ExtResource("1_u4bsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057932904]
+shape = SubResource("RectangleShape2D_42l1d")

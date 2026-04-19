@@ -4,6 +4,7 @@ const SPEED = 25.0
 const LENGTH_RAYCAST = 8.
 var direction = 'null'
 signal item_collected
+signal landing_zone_entered
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,11 +35,14 @@ func _process(delta: float) -> void:
 		position.x += -SPEED*delta
 		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
-	
-func _on_area_2d_for_reception_area_entered(area: Area2D) -> void:
+
+
+func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Signal Packets"):
 		direction = area.instruction
 	if area.is_in_group("Collectibles"):
 		print("Collected ", area.name)
 		item_collected.emit(area.name)
-	
+	if area.name=="LandingZone":
+		landing_zone_entered.emit()
+	pass # Replace with function body.

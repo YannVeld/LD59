@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="1_2vrla"]
 [ext_resource type="Texture2D" uid="uid://b75pa3pefkgs5" path="res://Sprites/Robot_walk.png" id="2_6phhs"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
+size = Vector2(10, 10)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
 atlas = ExtResource("2_6phhs")
 region = Rect2(0, 0, 24, 24)
@@ -95,27 +98,22 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
-size = Vector2(10, 10)
-
-[node name="Robot" type="Node2D" unique_id=785140858]
+[node name="Robot" type="Area2D" unique_id=848888713]
 script = ExtResource("1_2vrla")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914471792]
-sprite_frames = SubResource("SpriteFrames_vimvf")
-autoplay = "default"
-frame_progress = 0.41351366
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=352001469]
-position = Vector2(1, 7)
-target_position = Vector2(6, 0)
-
-[node name="Area2D_for_reception" type="Area2D" parent="." unique_id=1692288241]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_for_reception" unique_id=1687802917]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872788905]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_66tet")
 debug_color = Color(0.87868875, 0.14046684, 0.75721, 0.41960785)
 
-[connection signal="area_entered" from="Area2D_for_reception" to="." method="_on_area_2d_for_reception_area_entered"]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=275096003]
+position = Vector2(1, 7)
+target_position = Vector2(6, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=723844807]
+sprite_frames = SubResource("SpriteFrames_vimvf")
+autoplay = "default"
+frame = 4
+frame_progress = 0.96403325
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
