@@ -1,14 +1,17 @@
-[gd_scene format=4 uid="uid://c3r7c3841k0r6"]
+[gd_scene format=4 uid="uid://o68ucl6e00ux"]
 
-[ext_resource type="Script" uid="uid://wdeln8oy0ae2" path="res://Scripts/game_menu.gd" id="1_qus6b"]
-[ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_tklej"]
-[ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_scae6"]
-[ext_resource type="PackedScene" uid="uid://558eptq6setq" path="res://Scenes/robot.tscn" id="4_pbvm6"]
-[ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="5_xxfb2"]
+[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_wh4pa"]
+[ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_b4lsh"]
+[ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_yxclo"]
+[ext_resource type="TileSet" uid="uid://d4h3vg5fllrxf" path="res://Sprites/terrain_tile_set.tres" id="4_fx4lf"]
+[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="5_sx4db"]
+[ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="6_7lf1v"]
+[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="7_dguho"]
+[ext_resource type="PackedScene" uid="uid://dooujn2jr3w61" path="res://Scenes/oil_patch.tscn" id="8_p2trt"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n01hv"]
 resource_name = "Terrain"
-texture = ExtResource("2_tklej")
+texture = ExtResource("2_b4lsh")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1037,8 +1040,8 @@ texture = ExtResource("2_tklej")
 12:47/0 = 0
 13:47/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66tet"]
-texture = ExtResource("3_scae6")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7odde"]
+texture = ExtResource("3_yxclo")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -1153,94 +1156,63 @@ texture = ExtResource("3_scae6")
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
-3:3/0 = 0
-5:3/0 = 0
-5:3/0/terrain_set = 0
-5:3/0/terrain = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:3/0/terrains_peering_bit/top_side = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-5:5/0 = 0
-4:5/0 = 0
-3:5/0 = 0
-2:5/0 = 0
-1:5/0 = 0
-0:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
 3:2/0 = 0
 4:2/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+5:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+5:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_nfk4m"]
+[sub_resource type="TileSet" id="TileSet_0bk12"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_hq1ik")
-sources/1 = SubResource("TileSetAtlasSource_66tet")
+sources/0 = SubResource("TileSetAtlasSource_n01hv")
+sources/1 = SubResource("TileSetAtlasSource_7odde")
 
-[node name="GameMenu" type="Node2D" unique_id=1798613870]
-script = ExtResource("1_qus6b")
+[node name="Level" unique_id=1798613870 instance=ExtResource("1_wh4pa")]
 
-[node name="Paths" type="TileMapLayer" parent="." unique_id=338462752]
-tile_map_data = PackedByteArray("AAAGAAYAAQAAAAMAAAAPAAUAAQABAAYAAAANAAQAAQABAAMAAAANAAcAAQAAAAMAAAAFAAcAAQABAAMAAAAHAAQAAQABAAYAAAACAAIAAQAAAAQAAAACAAMAAQAAAAQAAAADAAIAAQAAAAQAAAABAAEAAQAAAAQAAAAEAAEAAQAAAAQAAAAEAAMAAQAAAAQAAAABAAQAAQAAAAQAAAAPAAEAAQABAAQAAAAPAAIAAQABAAQAAAAOAAIAAQABAAQAAAAQAAMAAQABAAQAAAARAAIAAQABAAQAAAARAAQAAQABAAQAAAARAAkAAQABAAUAAAASAAoAAQABAAUAAAASAAkAAQABAAUAAAARAAgAAQABAAUAAAAQAAcAAQABAAUAAAATAAgAAQABAAUAAAAQAAoAAQABAAUAAAAIAAIAAQAAAAYAAAALAAEAAQAAAAYAAAA=")
-tile_set = SubResource("TileSet_nfk4m")
+[node name="Paths" type="TileMapLayer" parent="." index="1" unique_id=2087984666]
+tile_map_data = PackedByteArray("AAAIAAYAAQAAAAQAAAAJAAUAAQAAAAQAAAAIAAQAAQAAAAQAAAAIAAMAAQAAAAQAAAAMAAMAAQAAAAQAAAAMAAQAAQAAAAQAAAALAAUAAQAAAAQAAAATAAAAAQABAAQAAAATAAEAAQABAAQAAAATAAIAAQABAAQAAAAQAAEAAQABAAQAAAARAAAAAQABAAQAAAARAAMAAQABAAQAAAASAAQAAQABAAQAAAABAAEAAQABAAUAAAAAAAIAAQABAAUAAAAEAAEAAQABAAUAAAAAAAQAAQABAAUAAAABAAQAAQABAAUAAAAEAAMAAQABAAUAAAADAAQAAQABAAUAAAACAAcAAQAAAAYAAAADAAgAAQABAAYAAAAGAAkAAQABAAYAAAAIAAoAAQABAAYAAAAOAAkAAQABAAYAAAASAAgAAQABAAYAAAATAAkAAQABAAYAAAARAAoAAQABAAYAAAAHAAEAAQABAAYAAAAJAAAAAQABAAYAAAAPAAcAAQABAAMAAAAQAAkAAQABAAMAAAAIAAkAAQABAAMAAAAKAAoAAQABAAMAAAALAAEAAQABAAMAAAAFAAAAAQAAAAYAAAARAAYAAQAAAAYAAAATAAYAAQAAAAYAAAABAAgAAQAAAAYAAAAEAAoAAQABAAMAAAA=")
+tile_set = SubResource("TileSet_0bk12")
 
-[node name="Robot" parent="." unique_id=785140858 instance=ExtResource("4_pbvm6")]
-position = Vector2(175, 93)
+[node name="Obstacles" type="TileMapLayer" parent="." index="2" unique_id=1130596986]
+tile_map_data = PackedByteArray("AAAHAAgAAQAAAAIAAAANAAIAAQACAAAAAAAJAAIAAQAEAAAAAAAKAAIAAQAEAAAAAAALAAIAAQAEAAAAAAAJAAcAAQABAAAAAAAKAAcAAQABAAAAAAALAAcAAQABAAAAAAAFAAYAAQAFAAIAAAAHAAcAAQAAAAEAAAAHAAYAAQAFAAIAAAAHAAUAAQAFAAEAAAANAAcAAQACAAEAAAANAAYAAQAFAAEAAAANAAQAAQAFAAMAAAAPAAYAAQAFAAMAAAAQAAQAAQAEAAAAAAARAAQAAQAFAAAAAAD/////AQAAAAAAAAD//wAAAQAFAAIAAAD//wEAAQAFAAIAAAD//wIAAQAFAAIAAAD//wMAAQAFAAIAAAD//wQAAQAFAAIAAAD//wUAAQAFAAIAAAD//wYAAQAAAAEAAAD//wcAAQAAAAEAAAD//wgAAQAFAAIAAAD//wkAAQAFAAIAAAD//woAAQAFAAIAAAD//wsAAQAFAAIAAAD//wwAAQAAAAIAAAAAAAwAAQAEAAAAAAABAAwAAQAEAAAAAAACAAwAAQAEAAAAAAADAAwAAQAEAAAAAAAEAAwAAQAEAAAAAAAFAAwAAQAEAAAAAAAGAAwAAQAEAAAAAAAHAAwAAQAEAAAAAAAIAAwAAQAEAAAAAAAJAAwAAQAEAAAAAAAKAAwAAQAEAAAAAAALAAwAAQAEAAAAAAAMAAwAAQAEAAAAAAANAAwAAQAEAAAAAAAOAAwAAQAEAAAAAAAPAAwAAQAEAAAAAAAQAAwAAQAEAAAAAAARAAwAAQAEAAAAAAASAAwAAQAEAAAAAAATAAwAAQAEAAAAAAAUAAwAAQACAAIAAAAUAAsAAQAFAAIAAAAUAAoAAQAFAAIAAAAUAAkAAQAFAAIAAAAUAAgAAQAFAAIAAAAUAAcAAQAFAAIAAAAUAP//AQACAAAAAAAUAAAAAQAFAAIAAAAUAAEAAQAFAAIAAAAUAAIAAQAFAAIAAAAUAAMAAQAFAAIAAAAUAAQAAQAFAAIAAAAUAAUAAQAFAAIAAAAUAAYAAQAFAAIAAAATAP//AQAEAAAAAAASAP//AQAEAAAAAAARAP//AQAEAAAAAAAQAP//AQAEAAAAAAAPAP//AQAEAAAAAAAOAP//AQAEAAAAAAANAP//AQAEAAAAAAAMAP//AQAEAAAAAAALAP//AQAEAAAAAAAKAP//AQAEAAAAAAAJAP//AQAEAAAAAAAIAP//AQAEAAAAAAAHAP//AQAEAAAAAAAGAP//AQAEAAAAAAACAP//AQAEAAAAAAABAP//AQAEAAAAAAAAAP//AQAEAAAAAAAFAP//AQAEAAAAAAAEAP//AQAEAAAAAAADAP//AQAEAAAAAAAHAAMAAQAFAAMAAAAHAAIAAQAAAAAAAAAIAAIAAQAEAAAAAAAMAAIAAQAEAAAAAAAMAAcAAQABAAAAAAANAAMAAQAFAAIAAAAPAAUAAQAFAAIAAAAPAAQAAQAAAAAAAAAFAAQAAQACAAEAAAAFAAMAAQAFAAEAAAAEAAUAAQABAAIAAAAEAAQAAQAAAAAAAAAEAAcAAQAAAAIAAAAFAAcAAQACAAIAAAAFAAUAAQADAAEAAAAIAAcAAQABAAAAAAAIAAgAAQABAAIAAAAJAAgAAQABAAIAAAAKAAgAAQABAAIAAAALAAgAAQAEAAIAAAAMAAgAAQABAAIAAAANAAgAAQACAAIAAAAOAAoAAQAFAAAAAAANAAoAAQAEAAAAAAALAAkAAQAFAAMAAAAMAAoAAQADAAAAAAAPAAgAAQADAAEAAAAPAAkAAQADAAEAAAADAAUAAQAEAAAAAAACAAUAAQAEAAAAAAABAAUAAQADAAAAAAAAAAcAAQACAAIAAAAAAAYAAQADAAEAAAA=")
+tile_set = ExtResource("4_fx4lf")
 
-[node name="Transmitter" parent="." unique_id=910806447 instance=ExtResource("5_xxfb2")]
-position = Vector2(144, 81)
-disable_aimguide = true
+[node name="FruitTree" parent="." index="5" unique_id=1765231128 instance=ExtResource("5_sx4db")]
+position = Vector2(170, 88)
 
-[node name="Level buttons" type="HBoxContainer" parent="." unique_id=1728283557]
-offset_left = 65.0
-offset_top = 137.0
-offset_right = 255.0
-offset_bottom = 168.0
+[node name="BigMushroom" parent="." index="6" unique_id=1865129271 instance=ExtResource("6_7lf1v")]
+position = Vector2(288, 35)
 
-[node name="Button" type="Button" parent="Level buttons" unique_id=764628211]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
+[node name="TwistVine" parent="." index="7" unique_id=1775137693 instance=ExtResource("7_dguho")]
+position = Vector2(35, 52)
 
-[node name="Button2" type="Button" parent="Level buttons" unique_id=1145476549]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "2"
+[node name="OilPatch" parent="." index="14" unique_id=1041192443 instance=ExtResource("8_p2trt")]
+position = Vector2(104, 83)
 
-[node name="Button3" type="Button" parent="Level buttons" unique_id=23963129]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "3"
+[node name="OilPatch2" parent="." index="15" unique_id=1691199125 instance=ExtResource("8_p2trt")]
+position = Vector2(104, 61)
 
-[node name="Button4" type="Button" parent="Level buttons" unique_id=1511021715]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "4"
+[node name="OilPatch3" parent="." index="16" unique_id=1298456807 instance=ExtResource("8_p2trt")]
+position = Vector2(231, 86)
 
-[node name="Button5" type="Button" parent="Level buttons" unique_id=2041245639]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "5"
-
-[node name="Button6" type="Button" parent="Level buttons" unique_id=2096303132]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "6"
-
-[connection signal="pressed" from="Level buttons/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Level buttons/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Level buttons/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Level buttons/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Level buttons/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Level buttons/Button6" to="." method="_on_button_6_pressed"]
+[node name="OilPatch4" parent="." index="17" unique_id=1338801246 instance=ExtResource("8_p2trt")]
+position = Vector2(232, 102)
