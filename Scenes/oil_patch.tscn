@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://gvruh5wmjesy"]
+[gd_scene format=3 uid="uid://dooujn2jr3w61"]
 
 [ext_resource type="Texture2D" uid="uid://swaibklovu2l" path="res://Sprites/OilPatch.png" id="1_yqjx3"]
 
@@ -41,13 +41,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_usj0q"]
 radius = 7.0
 
-[node name="OilPatch" type="Area2D" unique_id=1041192443]
-collision_layer = 0
-collision_mask = 0
+[node name="OilPatch" type="Area2D" unique_id=1041192443 groups=["Oil Patches"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1744099285]
 sprite_frames = SubResource("SpriteFrames_eqrsh")
 autoplay = "default"
+frame_progress = 0.68902326
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=732974906]
 shape = SubResource("CircleShape2D_usj0q")

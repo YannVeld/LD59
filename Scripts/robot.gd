@@ -1,8 +1,12 @@
 extends Node2D
 
 const SPEED = 25.0
+var speed = SPEED
 const LENGTH_RAYCAST = 8.
 var direction = 'null'
+const SLIP_DURATION = 0.33
+const SLIP_SPEED_FACTOR = 4
+
 signal item_collected
 signal landing_zone_entered
 
@@ -12,6 +16,7 @@ signal landing_zone_entered
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var item_pickup_particle: CPUParticles2D = $ItemPickupParticle
 @onready var particle_timer: Timer = $ParticleTimer
+@onready var slip_timer: Timer = $SlipTimer
 
 var time_since_collision: float = 999.0
 var last_item_collected: String = ""
@@ -73,17 +78,17 @@ func _process(delta: float) -> void:
 	if direction == 'null':
 		ray_cast_2d.target_position = Vector2(0,0)
 	if direction == 'up':
-		velocity.y += -SPEED
+		velocity.y += -speed
 		ray_cast_2d.target_position = Vector2(0,-1)*LENGTH_RAYCAST*0.5
 	if direction == 'down':
-		velocity.y += SPEED
+		velocity.y += speed
 		ray_cast_2d.target_position = Vector2(0,1)*LENGTH_RAYCAST*0.5
 	if direction == 'right':
-		velocity.x += SPEED
+		velocity.x += speed
 		animated_sprite_2d.flip_h = true
 		ray_cast_2d.target_position = Vector2(1,0)*LENGTH_RAYCAST
 	if direction == 'left':
-		velocity.x += -SPEED
+		velocity.x += -speed
 		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
 
@@ -95,6 +100,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_area_entered(area: Area2D) -> void:
+	print("area entered")
 	if area.is_in_group("Signal Packets"):
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE
@@ -103,11 +109,18 @@ func _on_area_entered(area: Area2D) -> void:
 			_collect_item(area)
 	if area.name=="LandingZone":
 		landing_zone_entered.emit()
+	if area.is_in_group("Oil Patches"):
+		print("oil patch")
+		slip()
 	pass # Replace with function body.
 
+func slip():
+	print("slipping")
+	slip_timer.start(SLIP_DURATION)
+	speed = SPEED*SLIP_SPEED_FACTOR
 
 func _on_particle_timer_timeout() -> void:
 	_play_item_collect_particle(last_item_collected)
-	
-	
-	
+
+func _on_slip_timer_timeout() -> void:
+	speed = SPEED # Replace with function body.
