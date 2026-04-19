@@ -14,7 +14,7 @@
 [node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("2_ph1qb")]
 
 [node name="LandingZone" parent="." unique_id=799687337 instance=ExtResource("5_5rw1d")]
-position = Vector2(40, 163)
+position = Vector2(39, 165)
 
 [node name="Robot" parent="." unique_id=932874256 instance=ExtResource("6_15ml2")]
 position = Vector2(40, 158)
