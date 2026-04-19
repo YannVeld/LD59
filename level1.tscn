@@ -1,13 +1,15 @@
-[gd_scene format=4 uid="uid://fcedadsvl1uh"]
+[gd_scene format=4 uid="uid://e0tc27vt1it4"]
 
 [ext_resource type="PackedScene" uid="uid://cjjmo853np4ae" path="res://Scenes/tutorial.tscn" id="1_5j5gb"]
-[ext_resource type="PackedScene" uid="uid://pp473fcoac01" path="res://Scenes/game_manager.tscn" id="1_usj0q"]
+[ext_resource type="PackedScene" uid="uid://bsa73cldmt0s2" path="res://Scenes/game_manager.tscn" id="1_usj0q"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_n8vhr"]
-[ext_resource type="PackedScene" uid="uid://dcqcwjfo15ahx" path="res://Scenes/essentials.tscn" id="2_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_eqrsh"]
+[ext_resource type="PackedScene" path="res://Scenes/robot.tscn" id="4_5j5gb"]
+[ext_resource type="PackedScene" path="res://Scenes/transmitter.tscn" id="5_mx85b"]
 [ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="8_hx44q"]
 [ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="11_eqrsh"]
 [ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="12_3l65w"]
+[ext_resource type="PackedScene" path="res://Scenes/landing_zone.tscn" id="12_uuy0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
@@ -1178,11 +1180,9 @@ sources/1 = SubResource("TileSetAtlasSource_66tet")
 
 [node name="Level" type="Node2D" unique_id=1798613870]
 
-[node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("1_usj0q")]
-
-[node name="Essentials" parent="." unique_id=825066848 instance=ExtResource("2_xy4tn")]
-
 [node name="Tutorial" parent="." unique_id=1898351244 instance=ExtResource("1_5j5gb")]
+
+[node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("1_usj0q")]
 
 [node name="Paths" type="TileMapLayer" parent="." unique_id=338462752]
 tile_map_data = PackedByteArray("AAACAAUAAQAAAAMAAAACAAYAAQAAAAMAAAAEAAgAAQAAAAMAAAAFAAgAAQAAAAMAAAAJAAgAAQAAAAMAAAANAAgAAQAAAAMAAAAOAAYAAQAAAAMAAAAQAAUAAQAAAAMAAAAPAAEAAQABAAQAAAAJAAEAAQAAAAMAAAAFAAEAAQAAAAMAAAAIAAQAAQAAAAMAAAAGAAQAAQAAAAMAAAAGAAYAAQAAAAMAAAAMAAUAAQAAAAMAAAAMAAIAAQAAAAMAAAAGAAgAAQABAAMAAAAIAAEAAQABAAMAAAALAAQAAQABAAMAAAARAAcAAQABAAMAAAAPAAUAAQACAAMAAAANAAEAAQACAAMAAAAMAAgAAQACAAMAAAAIAAcAAQACAAMAAAAGAAMAAQACAAMAAAAOAAAAAQADAAMAAAAHAAoAAQADAAIAAAAKAAQAAQADAAIAAAALAAoAAQAEAAMAAAAEAAoAAQAEAAMAAAAAAAcAAQAEAAMAAAAEAAUAAQAEAAMAAAAQAAoAAQAEAAMAAAANAAMAAQAEAAMAAAADAAEAAQAEAAIAAAACAAMAAQAEAAIAAAABAAMAAQAEAAIAAAAEAAAAAQAEAAIAAAASAAMAAQABAAQAAAAPAAMAAQABAAQAAAARAAMAAQABAAQAAAASAAAAAQABAAQAAAATAAQAAQABAAQAAAARAAkAAQAAAAQAAAAQAAgAAQAAAAQAAAARAAoAAQAAAAQAAAAOAAoAAQAAAAQAAAAMAAkAAQAAAAQAAAAOAAcAAQAAAAQAAAA=")
@@ -1191,6 +1191,12 @@ tile_set = SubResource("TileSet_nfk4m")
 [node name="Obstacles" type="TileMapLayer" parent="." unique_id=694049642]
 tile_map_data = PackedByteArray("AAAHAAgAAQAFAAMAAAACAAQAAQADAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAFAAAAAAAEAAIAAQADAAAAAAAFAAIAAQAEAAAAAAAGAAIAAQAFAAAAAAANAAIAAQADAAAAAAAOAAIAAQAEAAAAAAAPAAIAAQAFAAAAAAAJAAIAAQABAAAAAAAKAAIAAQABAAAAAAAKAAMAAQABAAIAAAAJAAMAAQABAAIAAAALAAIAAQACAAAAAAALAAMAAQACAAIAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAIAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAEAAAAJAAcAAQAAAAIAAAAKAAcAAQABAAIAAAALAAYAAQACAAEAAAALAAUAAQACAAAAAAAKAAUAAQABAAAAAAAKAAYAAQADAAEAAAALAAcAAQACAAIAAAAEAAcAAQACAAIAAAADAAcAAQADAAAAAAAFAAYAAQAFAAAAAAAEAAYAAQAAAAAAAAAHAAcAAQAFAAIAAAAHAAYAAQAFAAIAAAAHAAUAAQAFAAEAAAANAAcAAQAFAAMAAAANAAYAAQAFAAIAAAANAAUAAQAFAAIAAAANAAQAAQAAAAAAAAAOAAQAAQAFAAAAAAAPAAYAAQADAAAAAAAQAAYAAQACAAAAAAAQAAcAAQAFAAMAAAAQAAQAAQADAAAAAAARAAQAAQAFAAAAAAD/////AQAAAAAAAAD//wAAAQAFAAIAAAD//wEAAQAFAAIAAAD//wIAAQAFAAIAAAD//wMAAQAFAAIAAAD//wQAAQAFAAIAAAD//wUAAQAFAAIAAAD//wYAAQAFAAIAAAD//wcAAQAFAAIAAAD//wgAAQAFAAIAAAD//wkAAQAFAAIAAAD//woAAQAFAAIAAAD//wsAAQAFAAIAAAD//wwAAQAAAAIAAAAAAAwAAQAEAAAAAAABAAwAAQAEAAAAAAACAAwAAQAEAAAAAAADAAwAAQAEAAAAAAAEAAwAAQAEAAAAAAAFAAwAAQAEAAAAAAAGAAwAAQAEAAAAAAAHAAwAAQAEAAAAAAAIAAwAAQAEAAAAAAAJAAwAAQAEAAAAAAAKAAwAAQAEAAAAAAALAAwAAQAEAAAAAAAMAAwAAQAEAAAAAAANAAwAAQAEAAAAAAAOAAwAAQAEAAAAAAAPAAwAAQAEAAAAAAAQAAwAAQAEAAAAAAARAAwAAQAEAAAAAAASAAwAAQAEAAAAAAATAAwAAQAEAAAAAAAUAAwAAQACAAIAAAAUAAsAAQAFAAIAAAAUAAoAAQAFAAIAAAAUAAkAAQAFAAIAAAAUAAgAAQAFAAIAAAAUAAcAAQAFAAIAAAAUAP//AQACAAAAAAAUAAAAAQAFAAIAAAAUAAEAAQAFAAIAAAAUAAIAAQAFAAIAAAAUAAMAAQAFAAIAAAAUAAQAAQAFAAIAAAAUAAUAAQAFAAIAAAAUAAYAAQAFAAIAAAATAP//AQAEAAAAAAASAP//AQAEAAAAAAARAP//AQAEAAAAAAAQAP//AQAEAAAAAAAPAP//AQAEAAAAAAAOAP//AQAEAAAAAAANAP//AQAEAAAAAAAMAP//AQAEAAAAAAALAP//AQAEAAAAAAAKAP//AQAEAAAAAAAJAP//AQAEAAAAAAAIAP//AQAEAAAAAAAHAP//AQAEAAAAAAAGAP//AQAEAAAAAAACAP//AQAEAAAAAAABAP//AQAEAAAAAAAAAP//AQAEAAAAAAAFAP//AQAEAAAAAAAEAP//AQAEAAAAAAADAP//AQAEAAAAAAA=")
 tile_set = SubResource("TileSet_nfk4m")
+
+[node name="Robot" parent="." unique_id=932874256 instance=ExtResource("4_5j5gb")]
+position = Vector2(47, 127)
+
+[node name="Transmitter" parent="." unique_id=1011246198 instance=ExtResource("5_mx85b")]
+position = Vector2(13, 156)
 
 [node name="FruitTree" parent="." unique_id=1765231128 instance=ExtResource("11_eqrsh")]
 position = Vector2(241, 139)
@@ -1201,4 +1207,10 @@ position = Vector2(23, 31)
 [node name="BigMushroom" parent="." unique_id=1554755476 instance=ExtResource("8_hx44q")]
 position = Vector2(271, 33)
 
+[node name="LandingZone" parent="." unique_id=799687337 instance=ExtResource("12_uuy0h")]
+position = Vector2(42, 161)
+
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
+
+[connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
+[connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
