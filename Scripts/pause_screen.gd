@@ -15,3 +15,9 @@ func _process(delta: float) -> void:
 			self.show()
 		else:
 			self.hide()
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://game_menu.tscn")
+	pass # Replace with function body.

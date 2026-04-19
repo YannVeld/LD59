@@ -35,21 +35,28 @@ script = ExtResource("7_e21v8")
 [node name="CanvasModulate" type="CanvasModulate" parent="PauseScreen" unique_id=1159456122]
 color = Color(0.26506978, 0.49340576, 0.5153274, 1)
 
-[node name="Label" type="Label" parent="PauseScreen" unique_id=680268840]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 113.0
-offset_top = 81.0
-offset_right = 219.0
-offset_bottom = 104.0
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen" unique_id=1464917129]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 77.0
+offset_right = 218.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PauseScreen/VBoxContainer" unique_id=680268840]
+layout_mode = 2
 text = "Game Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MainMenuButton" type="Button" parent="PauseScreen/VBoxContainer" unique_id=1722810022]
+layout_mode = 2
+text = "Main menu"
+
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
 [connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/MainMenuButton" to="PauseScreen" method="_on_main_menu_button_pressed"]
