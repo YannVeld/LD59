@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://fcedadsvl1uh"]
 
+[ext_resource type="PackedScene" uid="uid://cjjmo853np4ae" path="res://Scenes/tutorial.tscn" id="1_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://pp473fcoac01" path="res://Scenes/game_manager.tscn" id="1_usj0q"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_eqrsh"]
@@ -1175,6 +1176,8 @@ sources/0 = SubResource("TileSetAtlasSource_hq1ik")
 sources/1 = SubResource("TileSetAtlasSource_66tet")
 
 [node name="Level" type="Node2D" unique_id=1798613870]
+
+[node name="Tutorial" parent="." unique_id=1898351244 instance=ExtResource("1_5j5gb")]
 
 [node name="GameManager" parent="." unique_id=458423404 instance=ExtResource("1_usj0q")]
 

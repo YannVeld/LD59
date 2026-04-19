@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cjjmo853np4ae"]
+
+[ext_resource type="Script" uid="uid://d3ptt4y05goun" path="res://Scripts/tutorial.gd" id="1_omtrn"]
+[ext_resource type="Texture2D" uid="uid://oocuvjbtnrgx" path="res://Sprites/TutorialKeys.png" id="2_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://cy5ek3imteoog" path="res://Sprites/TutorialMouse.png" id="3_p8jf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjtee"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beq0j"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nauge"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv2e"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5gc3"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e4cv"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuy0h"]
+atlas = ExtResource("2_i6t4g")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52iny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjtee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1idop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beq0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nauge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5gc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e4cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuy0h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tutorial" type="Node" unique_id=1898351244]
+script = ExtResource("1_omtrn")
+
+[node name="KeysSample" type="AnimatedSprite2D" parent="." unique_id=1359526192]
+position = Vector2(169, 101)
+sprite_frames = SubResource("SpriteFrames_52iny")
+autoplay = "default"
+
+[node name="MouseSample" type="Sprite2D" parent="." unique_id=1599824168]
+position = Vector2(175, 98)
+texture = ExtResource("3_p8jf4")
+
+[node name="mouseTimer" type="Timer" parent="." unique_id=1776149874]
+one_shot = true
+
+[node name="KeysTimer" type="Timer" parent="." unique_id=716445574]
+one_shot = true
+
+[connection signal="timeout" from="mouseTimer" to="." method="_on_mouse_timer_timeout"]
+[connection signal="timeout" from="KeysTimer" to="." method="_on_keys_timer_timeout"]
