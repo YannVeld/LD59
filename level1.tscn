@@ -2363,4 +2363,7 @@ position = Vector2(274, 28)
 [node name="TwistVine" parent="." index="10" unique_id=1354608554 instance=ExtResource("12_3l65w")]
 position = Vector2(26, 29)
 
+[node name="PauseScreen" parent="." index="13" unique_id=1965419860]
+visible = false
+
 [connection signal="landing_animation_finished" from="TowerLanding" to="Tutorial" method="_on_tower_landing_landing_animation_finished"]
