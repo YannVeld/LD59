@@ -11,6 +11,8 @@ var SignalPacketInstance
 @export
 var disable_aimguide = false
 
+var transmitter_ready = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +21,9 @@ func _ready() -> void:
 
 		
 func _input(event) -> void:
+	if not transmitter_ready:
+		return
+		
 	if event is InputEventKey:
 		direction = "null" 
 		# Send signal packet
@@ -41,3 +46,7 @@ func _input(event) -> void:
 			$"../SignalPackets".add_child(SignalPacketInstance)
 	return 
 	
+
+
+func _on_tower_landing_landing_animation_finished() -> void:
+	transmitter_ready = true
