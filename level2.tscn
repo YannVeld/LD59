@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c64rq3wsklbjo"]
+
+[ext_resource type="PackedScene" uid="uid://e0tc27vt1it4" path="res://template.tscn" id="1_y0xe8"]
+[ext_resource type="PackedScene" uid="uid://ec46je58h8c0" path="res://Scenes/signal_absorber.tscn" id="2_6q4t8"]
+[ext_resource type="PackedScene" uid="uid://bg34tnjmwlm3" path="res://Scenes/mirror.tscn" id="3_8tcn8"]
+
+[node name="Level" unique_id=1798613870 instance=ExtResource("1_y0xe8")]
+
+[node name="SignalAbsorber" parent="." index="5" unique_id=1952546217 groups=["Signal Absorbers"] instance=ExtResource("2_6q4t8")]
+position = Vector2(97, 107)
+
+[node name="Mirror" parent="." index="6" unique_id=854360054 instance=ExtResource("3_8tcn8")]
+position = Vector2(154, 116)
+rotation = 2.7281404

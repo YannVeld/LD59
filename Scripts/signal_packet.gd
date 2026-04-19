@@ -20,4 +20,8 @@ func _process(delta: float) -> void:
 	return
 
 func _on_body_entered(body: Node2D) -> void:
-	queue_free()
+	print('body entered')
+	if body.is_in_group("Signal Absorbers"):
+		queue_free()
+	if body.is_in_group("Mirrors"):
+		print('Hit Mirror!')
