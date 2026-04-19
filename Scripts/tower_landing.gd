@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var _transmitter = get_node("../Transmitter")
 
+signal landing_animation_finished
+
 const START_Y: float = -240.0
 const INIT_FALL_SPEED: float = 250.0
 const MIN_FALL_SPEED: float = 1.0
@@ -58,4 +60,5 @@ func _process(delta: float) -> void:
 	if is_on_last_frame:
 		_transmitter.set_process(true)
 		_transmitter.visible = true
+		landing_animation_finished.emit()
 		queue_free()
