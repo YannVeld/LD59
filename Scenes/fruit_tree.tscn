@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_7cbgm"]
 [ext_resource type="Texture2D" uid="uid://novapj26cr87" path="res://Sprites/FruitTree1_short.png" id="1_dxmdv"]
+[ext_resource type="Script" uid="uid://ck711exn8pqen" path="res://Scripts/collectibles.gd" id="1_pb2op"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb2op"]
 shader = ExtResource("1_7cbgm")
@@ -14,6 +15,7 @@ shader_parameter/do_blinking = true
 size = Vector2(17, 26)
 
 [node name="FruitTree" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+script = ExtResource("1_pb2op")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
 material = SubResource("ShaderMaterial_pb2op")

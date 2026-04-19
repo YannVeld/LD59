@@ -67,6 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 		time_since_collision = COLL_TIME_IDLE
 	if area.is_in_group("Collectibles"):
 		print("Collected ", area.name)
+		print(area.turn_off_shader())
 		item_collected.emit(area.name)
 	if area.name=="LandingZone":
 		landing_zone_entered.emit()

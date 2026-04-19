@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4tfqfu7ls7vo"]
 
 [ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_406iy"]
+[ext_resource type="Script" uid="uid://ck711exn8pqen" path="res://Scripts/collectibles.gd" id="1_kenbi"]
 [ext_resource type="Texture2D" uid="uid://tcdahhk71xti" path="res://Sprites/BigMushroom.png" id="2_406iy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb2op"]
@@ -14,6 +15,7 @@ shader_parameter/do_blinking = true
 size = Vector2(17, 26)
 
 [node name="BigMushroom" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+script = ExtResource("1_kenbi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
 material = SubResource("ShaderMaterial_pb2op")

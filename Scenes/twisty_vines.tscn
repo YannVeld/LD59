@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csdok253tnkql"]
 
+[ext_resource type="Script" uid="uid://ck711exn8pqen" path="res://Scripts/collectibles.gd" id="1_jbqv5"]
 [ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="1_pqci5"]
 [ext_resource type="Texture2D" uid="uid://dlmmovdo7knnh" path="res://Sprites/TwistyVines_blue.png" id="2_jbqv5"]
 
@@ -14,6 +15,7 @@ shader_parameter/do_blinking = true
 size = Vector2(29, 24)
 
 [node name="TwistVine" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
+script = ExtResource("1_jbqv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
 material = SubResource("ShaderMaterial_r2efc")
