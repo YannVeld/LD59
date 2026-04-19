@@ -1,4 +1,6 @@
-extends Area2D
+class_name Collectable extends Area2D
+
+@export var item_name = ""
 
 @onready var robot: Area2D = $"../Robot"
 @export var prevent_zorder_changes = false

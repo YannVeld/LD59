@@ -16,6 +16,7 @@ size = Vector2(17, 26)
 
 [node name="FruitTree" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
 script = ExtResource("1_pb2op")
+item_name = "fruit"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]
 material = SubResource("ShaderMaterial_pb2op")

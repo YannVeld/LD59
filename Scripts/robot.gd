@@ -6,10 +6,15 @@ var direction = 'null'
 signal item_collected
 signal landing_zone_entered
 
+@export var item_icons: Dictionary[String, Texture2D] = {'fruit'=null, 'mushroom'=null, 'vine'=null}
+
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var item_pickup_particle: CPUParticles2D = $ItemPickupParticle
+@onready var particle_timer: Timer = $ParticleTimer
 
 var time_since_collision: float = 999.0
+var last_item_collected: String = ""
 const COLL_TIME_IDLE: float = 0.2
 
 var is_on_last_frame: bool:
@@ -28,11 +33,18 @@ func _update_animation(dir: String) -> void:
 		
 	animated_sprite_2d.set_animation('walk')
 
-func _collect_item(item: Area2D) -> void:
-	print("Collected ", item.name)
+func _play_item_collect_particle(name: String) -> void:
+	item_pickup_particle.texture = item_icons[name]
+	item_pickup_particle.emitting = true
+
+func _collect_item(item: Collectable) -> void:
+	print("Collected ", item.item_name)
 	print(item.turn_off_shader())
 	item_collected.emit(item.name)
 	animated_sprite_2d.set_animation('jump')
+	last_item_collected = item.item_name
+	particle_timer.start()
+	
 
 func _get_bounce_direction() -> String:
 	if time_since_collision < COLL_TIME_IDLE:
@@ -90,3 +102,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name=="LandingZone":
 		landing_zone_entered.emit()
 	pass # Replace with function body.
+
+
+func _on_particle_timer_timeout() -> void:
+	_play_item_collect_particle(last_item_collected)

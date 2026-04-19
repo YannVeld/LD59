@@ -16,6 +16,7 @@ size = Vector2(29, 24)
 
 [node name="TwistVine" type="Area2D" unique_id=1765231128 groups=["Collectibles"]]
 script = ExtResource("1_jbqv5")
+item_name = "vine"
 prevent_zorder_changes = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118787817]

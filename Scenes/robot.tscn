@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="1_2vrla"]
 [ext_resource type="Texture2D" uid="uid://b75pa3pefkgs5" path="res://Sprites/Robot_walk.png" id="2_6phhs"]
 [ext_resource type="Texture2D" uid="uid://bl2y6st8gu0jk" path="res://Sprites/Robot_idle.png" id="2_dwnub"]
+[ext_resource type="Texture2D" uid="uid://cy735pnx3d5xu" path="res://Sprites/ItemIcons_mushroom.png" id="3_7cjo4"]
 [ext_resource type="Texture2D" uid="uid://8insh40rd2ql" path="res://Sprites/Robot_jump.png" id="3_dwnub"]
+[ext_resource type="Texture2D" uid="uid://dl4x87gjmmu5h" path="res://Sprites/ItemIcons_vine.png" id="4_dcvsp"]
+[ext_resource type="Texture2D" uid="uid://xlevbewu6ekd" path="res://Sprites/ItemIcons_fruit.png" id="5_ntbue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
 size = Vector2(10, 10)
@@ -236,9 +239,18 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_8s4wd"]
+offsets = PackedFloat32Array(0, 0.6197411, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Robot" type="Area2D" unique_id=848888713]
 z_index = 1
 script = ExtResource("1_2vrla")
+item_icons = Dictionary[String, Texture2D]({
+"fruit": ExtResource("5_ntbue"),
+"mushroom": ExtResource("3_7cjo4"),
+"vine": ExtResource("4_dcvsp")
+})
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872788905]
 position = Vector2(1, 0)
@@ -255,4 +267,25 @@ animation = &"jump"
 autoplay = "idle"
 flip_h = true
 
+[node name="ItemPickupParticle" type="CPUParticles2D" parent="." unique_id=190175894]
+emitting = false
+amount = 1
+texture = ExtResource("5_ntbue")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+damping_min = 400.0
+damping_max = 400.0
+color_ramp = SubResource("Gradient_8s4wd")
+
+[node name="ParticleTimer" type="Timer" parent="." unique_id=1890338882]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="ParticleTimer" to="." method="_on_particle_timer_timeout"]
