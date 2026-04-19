@@ -148,5 +148,6 @@ target_position = Vector2(6, 0)
 sprite_frames = SubResource("SpriteFrames_vimvf")
 animation = &"walk"
 autoplay = "idle"
+flip_h = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

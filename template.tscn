@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://e0tc27vt1it4"]
+[gd_scene format=3 uid="uid://duem7xuf5pkr7"]
 
 [ext_resource type="PackedScene" uid="uid://pp473fcoac01" path="res://Scenes/game_manager.tscn" id="2_ph1qb"]
-[ext_resource type="PackedScene" uid="uid://c6gpbr0gwsne" path="res://Scenes/landing_zone.tscn" id="5_5rw1d"]
+[ext_resource type="PackedScene" path="res://Scenes/landing_zone.tscn" id="5_5rw1d"]
+[ext_resource type="PackedScene" uid="uid://bkprpjx2013a2" path="res://Scenes/robot_landing.tscn" id="5_68xgp"]
 [ext_resource type="PackedScene" uid="uid://558eptq6setq" path="res://Scenes/robot.tscn" id="6_15ml2"]
-[ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="7_jj470"]
+[ext_resource type="PackedScene" path="res://Scenes/transmitter.tscn" id="7_jj470"]
 
 [node name="Level" type="Node2D" unique_id=1798613870]
 
@@ -19,6 +20,9 @@ position = Vector2(40, 158)
 position = Vector2(13, 156)
 
 [node name="SignalPackets" type="Node" parent="." unique_id=942323314]
+
+[node name="RobotLanding" parent="." unique_id=842894247 instance=ExtResource("5_68xgp")]
+position = Vector2(69, 157)
 
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
 [connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
