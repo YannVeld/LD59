@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsheukrvpenne"]
+
+[ext_resource type="Script" uid="uid://bge7eyurriiq6" path="res://Scripts/fader.gd" id="1_cgo47"]
+
+[node name="Fader" type="ColorRect" unique_id=1757906040]
+z_index = 1000
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 325.0
+offset_bottom = 184.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_cgo47")

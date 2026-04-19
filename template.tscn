@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://xwd3d6ogcad7" path="res://Scenes/tower_landing.tscn" id="6_djkc3"]
 [ext_resource type="Script" uid="uid://dp1phmxmb4uj3" path="res://Scripts/pause_screen.gd" id="7_e21v8"]
 [ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="7_jj470"]
+[ext_resource type="PackedScene" uid="uid://bsheukrvpenne" path="res://Scenes/fader.tscn" id="7_uinmr"]
 [ext_resource type="Script" uid="uid://cwbkkrb40j46t" path="res://Scripts/circle_renderer.gd" id="8_747y3"]
 [ext_resource type="PackedScene" uid="uid://16xyn1wj8noj" path="res://Scenes/robot_takeoff.tscn" id="9_cysh1"]
-[ext_resource type="Script" uid="uid://bge7eyurriiq6" path="res://Scripts/fader.gd" id="10_uinmr"]
 
 [node name="Level" type="Node2D" unique_id=1798613870]
 
@@ -31,14 +31,11 @@ position = Vector2(69, 157)
 
 [node name="TowerLanding" parent="." unique_id=1768841714 instance=ExtResource("6_djkc3")]
 
+[node name="Fader" parent="." unique_id=1757906040 instance=ExtResource("7_uinmr")]
+
 [node name="PauseScreen" type="CanvasGroup" parent="." unique_id=1965419860]
 process_mode = 3
-visible = false
 script = ExtResource("7_e21v8")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="PauseScreen" unique_id=1159456122]
-z_index = 20
-color = Color(0.26506978, 0.49340576, 0.5153274, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen" unique_id=1464917129]
 z_index = 20
@@ -52,6 +49,11 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="PauseScreen/VBoxContainer" unique_id=1159456122]
+z_index = 20
+position = Vector2(-112, -65.5)
+color = Color(0.26506978, 0.49340576, 0.5153274, 1)
 
 [node name="Label" type="Label" parent="PauseScreen/VBoxContainer" unique_id=680268840]
 layout_mode = 2
@@ -68,14 +70,6 @@ script = ExtResource("8_747y3")
 
 [node name="RobotTakeoff" parent="." unique_id=785121779 instance=ExtResource("9_cysh1")]
 position = Vector2(60, 118)
-
-[node name="Fader" type="ColorRect" parent="." unique_id=746047363]
-offset_left = -8.0
-offset_top = -2.0
-offset_right = 325.0
-offset_bottom = 184.0
-color = Color(0, 0, 0, 0.78431374)
-script = ExtResource("10_uinmr")
 
 [connection signal="mission_accomplished" from="GameManager" to="CircleRenderer" method="_on_game_manager_mission_accomplished"]
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]

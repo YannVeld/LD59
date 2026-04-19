@@ -1,7 +1,7 @@
 extends ColorRect
 
-const FADE_IN_SPEED = 0.5
-const FADE_OUT_SPEED = 0.4
+@export var FADE_IN_SPEED = 0.5
+@export var FADE_OUT_SPEED = 0.7
 var fading_in = true
 var fading_out = false
 
@@ -19,8 +19,6 @@ func _process(delta: float) -> void:
 		
 	if fading_out:
 		color[3] += FADE_OUT_SPEED*delta
-		if color[3]>200:
-			fading_out=false
 		
 func _on_robot_takeoff_flying_starts() -> void:
 	fading_out=true
