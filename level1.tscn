@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cx5n2h4q7rqya"]
 
-[ext_resource type="PackedScene" uid="uid://cjjmo853np4ae" path="res://Scenes/tutorial.tscn" id="1_5j5gb"]
-[ext_resource type="PackedScene" uid="uid://e0tc27vt1it4" path="res://template.tscn" id="1_dopym"]
+[ext_resource type="PackedScene" path="res://Scenes/tutorial.tscn" id="1_5j5gb"]
+[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://d4iphaibi3d0u" path="res://Sprites/tileset_placeholder/1_terrain.png" id="2_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://wbti0bcoihnd" path="res://Sprites/WallsTileset.png" id="3_eqrsh"]
 [ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="8_hx44q"]
@@ -2347,7 +2347,6 @@ sources/1 = SubResource("TileSetAtlasSource_mx85b")
 [node name="Tutorial" parent="." index="0" unique_id=1898351244 instance=ExtResource("1_5j5gb")]
 
 [node name="Paths" type="TileMapLayer" parent="." index="2" unique_id=1935034312]
-position = Vector2(26, 29)
 tile_map_data = PackedByteArray("AAACAAUAAQAAAAMAAAACAAYAAQAAAAMAAAAEAAgAAQAAAAMAAAAFAAgAAQAAAAMAAAAJAAgAAQAAAAMAAAANAAgAAQAAAAMAAAAOAAYAAQAAAAMAAAAQAAUAAQAAAAMAAAAPAAEAAQABAAQAAAAJAAEAAQAAAAMAAAAFAAEAAQAAAAMAAAAIAAQAAQAAAAMAAAAGAAQAAQAAAAMAAAAGAAYAAQAAAAMAAAAMAAUAAQAAAAMAAAAMAAIAAQAAAAMAAAAGAAgAAQABAAMAAAAIAAEAAQABAAMAAAALAAQAAQABAAMAAAARAAcAAQABAAMAAAAPAAUAAQACAAMAAAANAAEAAQACAAMAAAAMAAgAAQACAAMAAAAIAAcAAQACAAMAAAAGAAMAAQACAAMAAAAOAAAAAQADAAMAAAAHAAoAAQADAAIAAAAKAAQAAQADAAIAAAALAAoAAQAEAAMAAAAEAAoAAQAEAAMAAAAAAAcAAQAEAAMAAAAEAAUAAQAEAAMAAAAQAAoAAQAEAAMAAAANAAMAAQAEAAMAAAADAAEAAQAEAAIAAAACAAMAAQAEAAIAAAABAAMAAQAEAAIAAAAEAAAAAQAEAAIAAAASAAMAAQABAAQAAAAPAAMAAQABAAQAAAARAAMAAQABAAQAAAASAAAAAQABAAQAAAATAAQAAQABAAQAAAARAAkAAQAAAAQAAAAQAAgAAQAAAAQAAAARAAoAAQAAAAQAAAAOAAoAAQAAAAQAAAAMAAkAAQAAAAQAAAAOAAcAAQAAAAQAAAA=")
 tile_set = SubResource("TileSet_usj0q")
 
