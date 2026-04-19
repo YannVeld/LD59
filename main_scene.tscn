@@ -10,8 +10,9 @@
 [ext_resource type="Script" uid="uid://nmem2o8mu50w" path="res://Scripts/transmitter.gd" id="8_7ycvg"]
 [ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="9_qwutr"]
 [ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="9_wr18j"]
-[ext_resource type="PackedScene" uid="uid://kp0ke4eklawt" path="res://Scenes/fruit_tree.tscn" id="11_671wp"]
-[ext_resource type="PackedScene" uid="uid://2uj5smrkndef" path="res://Scenes/twisty_vines.tscn" id="12_671wp"]
+[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="11_671wp"]
+[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="12_671wp"]
+[ext_resource type="Texture2D" uid="uid://cq8ortjlk46mf" path="res://Sprites/greenSquare.png" id="13_mo76n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
 resource_name = "Terrain"
@@ -1272,6 +1273,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
 size = Vector2(10, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42l1d"]
+size = Vector2(16, 16)
+
 [node name="Node2D" type="Node2D" unique_id=1798613870]
 
 [node name="GameManager" type="Node" parent="." unique_id=20897269]
@@ -1333,5 +1337,18 @@ position = Vector2(241, 139)
 [node name="TwistVine" parent="." unique_id=237942576 instance=ExtResource("12_671wp")]
 position = Vector2(23, 31)
 
+[node name="LandingZone" type="Area2D" parent="." unique_id=223653934]
+position = Vector2(36, 151)
+
+[node name="Sprite2D" type="Sprite2D" parent="LandingZone" unique_id=1906493832]
+texture = ExtResource("13_mo76n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingZone" unique_id=825937002]
+shape = SubResource("RectangleShape2D_42l1d")
+
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
+[connection signal="area_entered" from="Robot/Area2D_for_reception" to="GameManager" method="_on_area_2d_for_reception_area_entered"]
 [connection signal="area_entered" from="Robot/Area2D_for_reception" to="Robot" method="_on_area_2d_for_reception_area_entered"]
+[connection signal="area_entered" from="LandingZone" to="GameManager" method="_on_landing_zone_area_entered"]
+[connection signal="body_entered" from="LandingZone" to="GameManager" method="_on_landng_zone_body_entered"]
+[connection signal="body_entered" from="LandingZone" to="Robot" method="_on_landing_zone_body_entered"]
