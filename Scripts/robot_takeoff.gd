@@ -20,6 +20,7 @@ var _orig_x: float = 0.0
 var _is_flying: bool = false
 
 signal takeoff_complete
+signal flying_starts
 
 func start_takeoff():
 	position = _landing_zone.position + OFFSET
@@ -56,7 +57,7 @@ func _process(delta: float) -> void:
 		takeoff_complete.emit()
 		
 
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	_is_flying = true
 	_my_animator.play("flying")
+	flying_starts.emit()
