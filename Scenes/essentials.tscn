@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dcqcwjfo15ahx"]
+
+[ext_resource type="PackedScene" uid="uid://dde0yw0nht43x" path="res://Scenes/robot.tscn" id="1_5u8lx"]
+[ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="2_d0fwo"]
+[ext_resource type="PackedScene" uid="uid://c6gpbr0gwsne" path="res://Scenes/landing_zone.tscn" id="3_a8lwa"]
+
+[node name="Essentials" type="Node" unique_id=825066848]
+
+[node name="Robot" parent="." unique_id=848888713 instance=ExtResource("1_5u8lx")]
+position = Vector2(47, 127)
+
+[node name="Transmitter" parent="." unique_id=1011246198 instance=ExtResource("2_d0fwo")]
+position = Vector2(13, 156)
+
+[node name="LandingZone" parent="." unique_id=799687337 instance=ExtResource("3_a8lwa")]
+position = Vector2(42, 161)
