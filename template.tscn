@@ -59,4 +59,5 @@ text = "Main menu"
 
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
 [connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
+[connection signal="landing_animation_finished" from="TowerLanding" to="Transmitter" method="_on_tower_landing_landing_animation_finished"]
 [connection signal="pressed" from="PauseScreen/VBoxContainer/MainMenuButton" to="PauseScreen" method="_on_main_menu_button_pressed"]
