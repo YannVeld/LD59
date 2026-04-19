@@ -1,10 +1,27 @@
-[gd_scene format=3 uid="uid://dde0yw0nht43x"]
+[gd_scene format=3 uid="uid://558eptq6setq"]
 
 [ext_resource type="Script" uid="uid://h43ds2es3fif" path="res://Scripts/robot.gd" id="1_2vrla"]
 [ext_resource type="Texture2D" uid="uid://b75pa3pefkgs5" path="res://Sprites/Robot_walk.png" id="2_6phhs"]
+[ext_resource type="Texture2D" uid="uid://bl2y6st8gu0jk" path="res://Sprites/Robot_idle.png" id="2_dwnub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
 size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntbue"]
+atlas = ExtResource("2_dwnub")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s4wd"]
+atlas = ExtResource("2_dwnub")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cjo4"]
+atlas = ExtResource("2_dwnub")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcvsp"]
+atlas = ExtResource("2_dwnub")
+region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
 atlas = ExtResource("2_6phhs")
@@ -58,6 +75,23 @@ region = Rect2(264, 0, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ntbue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s4wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cjo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcvsp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wr18j")
 }, {
 "duration": 1.0,
@@ -94,7 +128,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ak604")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 8.0
 }]
 
@@ -112,8 +146,7 @@ target_position = Vector2(6, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=723844807]
 sprite_frames = SubResource("SpriteFrames_vimvf")
-autoplay = "default"
-frame = 4
-frame_progress = 0.96403325
+animation = &"walk"
+autoplay = "idle"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

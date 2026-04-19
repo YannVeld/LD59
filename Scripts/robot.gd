@@ -9,6 +9,14 @@ signal landing_zone_entered
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _update_animation(dir: String) -> void:
+	if dir == 'null':
+		animated_sprite_2d.set_animation('idle')
+		return
+		
+	animated_sprite_2d.set_animation('walk')
+	
+
 
 func _process(delta: float) -> void:
 	if ray_cast_2d.is_colliding():
@@ -36,6 +44,7 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
 
+	_update_animation(direction)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Signal Packets"):
