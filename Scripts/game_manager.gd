@@ -49,7 +49,13 @@ func _on_robot_landing_zone_entered() -> void:
 func _on_animation_wait_timer_timeout() -> void:
 	mission_accomplished.emit(robot.position)
 
-
 func _on_robot_takeoff_takeoff_complete() -> void:
 	SessionManager.level_status[SessionManager.current_level] = true
-	get_tree().change_scene_to_file("res://game_menu.tscn")
+	var next_level = SessionManager.get_suggested_level()
+	if next_level != 0:
+		print(next_level)
+		var filename  = "res://level"+str(next_level)+".tscn"
+		get_tree().change_scene_to_file(filename)
+	else:
+		get_tree().change_scene_to_file("res://game_menu.tscn")
+	
