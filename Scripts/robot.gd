@@ -47,7 +47,7 @@ func _collect_item(item: Collectable) -> void:
 	print("Collected ", item.item_name)
 	print(item.turn_off_shader())
 	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_COLLECT)
-	item_collected.emit()
+	item_collected.emit(item.name)
 	animated_sprite_2d.set_animation('jump')
 	last_item_collected = item.item_name
 	particle_timer.start()
