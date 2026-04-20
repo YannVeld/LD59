@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4x87gjmmu5h" path="res://Sprites/ItemIcons_vine.png" id="4_dcvsp"]
 [ext_resource type="Texture2D" uid="uid://xlevbewu6ekd" path="res://Sprites/ItemIcons_fruit.png" id="5_ntbue"]
 [ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="8_dcvsp"]
+[ext_resource type="Script" uid="uid://c2r3gflje7f5s" path="res://Scripts/robot_circle_renderer.gd" id="9_m0m82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
 size = Vector2(10, 10)
@@ -293,6 +294,9 @@ one_shot = true
 one_shot = true
 
 [node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("8_dcvsp")]
+
+[node name="CircleRenderer" type="Node2D" parent="." unique_id=87061600]
+script = ExtResource("9_m0m82")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

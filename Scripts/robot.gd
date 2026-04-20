@@ -18,6 +18,7 @@ signal landing_zone_entered
 @onready var particle_timer: Timer = $ParticleTimer
 @onready var slip_timer: Timer = $SlipTimer
 @onready var sound_player: SoundPlayer = $SoundPlayer
+@onready var circle_animation: RoboCircleAnimation = $CircleRenderer
 
 var time_since_collision: float = 999.0
 var last_item_collected: String = ""
@@ -110,6 +111,7 @@ func _on_area_entered(area: Area2D) -> void:
 		if not (area.instruction == direction):
 			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE, true)
 			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE, true, 0.1)
+			circle_animation.play_circle_animation()
 		else:
 			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_REJECT, false)
 			
