@@ -109,6 +109,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Signal Packets"):
 		if not (area.instruction == direction):
 			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE, true)
+			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE, true, 0.1)
+		else:
+			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_REJECT, false)
 			
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE

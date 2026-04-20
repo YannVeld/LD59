@@ -3,7 +3,7 @@ class_name SoundPlayer extends AudioStreamPlayer
 enum Sounds {NULL=0,
 			 ROBOT_COLLECT, ROBOT_BUMP, ROBOT_RECEIVE,
 			 ROBOT_TAKEOFF, ROBOT_LAND, ROBOT_STEP,
-			 ROBO_PHONE_HOME,
+			 ROBO_PHONE_HOME, ROBOT_REJECT,
 			 TRANSMITTER_FIRE, TRANSMITTER_LAND, TRANSMITTER_READY,
 			 TRANSMITTER_FALLING,
 			 PACKET_REFLECTED, PACKET_BLOCKED}
@@ -14,6 +14,7 @@ const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBOT_TAKEOFF: preload("res://Sounds/Takeoff.wav"),
 	Sounds.ROBOT_LAND: preload("res://Sounds/RobotLand.wav"),
 	Sounds.ROBOT_STEP: preload("res://Sounds/Step.wav"),
+	Sounds.ROBOT_REJECT: preload("res://Sounds/Error.wav"),
 	Sounds.ROBO_PHONE_HOME: preload("res://Sounds/robo_phone_home_fast.wav"),
 	Sounds.TRANSMITTER_FIRE: preload("res://Sounds/Shoot.wav"),
 	Sounds.TRANSMITTER_LAND: preload("res://Sounds/Hurt.wav"),
