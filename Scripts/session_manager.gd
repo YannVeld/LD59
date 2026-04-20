@@ -6,6 +6,9 @@ var level_status: Dictionary
 var num_levels = 6
 @export
 var current_level = null
+@export
+var pass_through = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

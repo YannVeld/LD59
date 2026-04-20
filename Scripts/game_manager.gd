@@ -53,9 +53,9 @@ func _on_robot_takeoff_takeoff_complete() -> void:
 	SessionManager.level_status[SessionManager.current_level] = true
 	var next_level = SessionManager.get_suggested_level()
 	if next_level != 0:
-		print(next_level)
+		SessionManager.current_level = next_level
 		var filename  = "res://level"+str(next_level)+".tscn"
-		get_tree().change_scene_to_file(filename)
-	else:
-		get_tree().change_scene_to_file("res://game_menu.tscn")
+		#get_tree().change_scene_to_file(filename) # Just doing seems to cause issues with the shaders.
+		SessionManager.pass_through = true		
+	get_tree().change_scene_to_file("res://game_menu.tscn")
 	

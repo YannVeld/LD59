@@ -9,6 +9,11 @@ func _ready() -> void:
 		mark_button_as_suggested(level_buttons.get_child(SessionManager.get_suggested_level()-1))
 	#print($"Level buttons/Button3".get_node().has_child(rect))
 
+	if SessionManager.pass_through:
+		SessionManager.pass_through = false
+		var filename  = "res://level"+str(SessionManager.current_level)+".tscn"
+		get_tree().change_scene_to_file(filename)
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
