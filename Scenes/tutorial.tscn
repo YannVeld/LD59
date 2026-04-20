@@ -77,7 +77,7 @@ sprite_frames = SubResource("SpriteFrames_52iny")
 autoplay = "default"
 
 [node name="MouseSample" type="Sprite2D" parent="." unique_id=1599824168]
-position = Vector2(175, 98)
+position = Vector2(168, 99)
 texture = ExtResource("3_p8jf4")
 
 [node name="mouseTimer" type="Timer" parent="." unique_id=1776149874]
