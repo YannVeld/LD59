@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://cjplv6ag6cgk3" path="res://Scripts/aim_guide.gd" id="2_64nqp"]
 [ext_resource type="Texture2D" uid="uid://blh22dv3vlfra" path="res://Sprites/Radiotower.png" id="3_rvwfv"]
 [ext_resource type="Texture2D" uid="uid://bt53fojy52l78" path="res://Sprites/TowerDish3.png" id="4_0cioi"]
-[ext_resource type="Script" path="res://Scripts/tower_dish.gd" id="5_2lej0"]
+[ext_resource type="Script" uid="uid://cl46k24n6f784" path="res://Scripts/tower_dish.gd" id="5_2lej0"]
+[ext_resource type="Script" uid="uid://d0u36gtthtayb" path="res://Scripts/transmitter_sounds.gd" id="6_64nqp"]
+[ext_resource type="AudioStream" uid="uid://biw570ddrc0s" path="res://Sounds/Shoot.wav" id="6_rvwfv"]
 
 [node name="Transmitter" type="Node2D" unique_id=1011246198]
 script = ExtResource("1_7n4aq")
@@ -25,3 +27,12 @@ position = Vector2(0, -7)
 texture = ExtResource("4_0cioi")
 offset = Vector2(4, -4)
 script = ExtResource("5_2lej0")
+
+[node name="SoundEffectStream" type="AudioStreamPlayer" parent="." unique_id=1505218051]
+stream = ExtResource("6_rvwfv")
+volume_db = -5.065
+bus = &"SoundEffects"
+script = ExtResource("6_64nqp")
+fireInstructionSound = ExtResource("6_rvwfv")
+
+[connection signal="on_instruction_fire" from="." to="SoundEffectStream" method="_on_transmitter_on_instruction_fire"]
