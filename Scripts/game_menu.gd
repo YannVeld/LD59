@@ -48,3 +48,7 @@ func mark_button_as_complete(button):
 	
 func mark_button_as_suggested(button):
 	button.set("theme_override_colors/font_color", Color.RED)
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
