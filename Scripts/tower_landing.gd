@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 	
 	if (_time_since_landing >= WAIT_AFTER_LANDING) and not is_on_last_frame:
 		_my_animator.play()
-		sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_READY, false, 0.0, false, true)
+		sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_READY, false, 0.4, true, true)
 	
 	if is_on_last_frame:
 		_transmitter.set_process(true)
