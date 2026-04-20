@@ -11,6 +11,7 @@ signal mission_accomplished
 
 var collection_status = Vector3(0,0,0)
 var objectives_complete = false
+var robot_has_taken_off = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,6 +40,7 @@ func do_level_over():
 	robot.set_process(false)
 	robot.visible = false
 	robot_takeoff.start_takeoff()
+	robot_has_taken_off = true
 	sound_player.play_sound(SoundPlayer.Sounds.SUCCES_JINGLE)
 
 func _on_robot_landing_zone_entered() -> void:
@@ -51,11 +53,15 @@ func _on_animation_wait_timer_timeout() -> void:
 	mission_accomplished.emit(robot.position)
 
 func _on_fader_on_fade_out_finished() -> void:
-	SessionManager.level_status[SessionManager.current_level] = true
-	var next_level = SessionManager.get_suggested_level()
-	if next_level != 0:
-		SessionManager.current_level = next_level
-		var filename  = "res://level"+str(next_level)+".tscn"
-		#get_tree().change_scene_to_file(filename) # Just doing seems to cause issues with the shaders.
-		SessionManager.pass_through = true		
-	get_tree().change_scene_to_file("res://game_menu.tscn")
+	if robot_has_taken_off:
+		SessionManager.level_status[SessionManager.current_level] = true
+		var next_level = SessionManager.get_suggested_level()
+		if next_level != 0:
+			SessionManager.current_level = next_level
+			var filename  = "res://level"+str(next_level)+".tscn"
+			#get_tree().change_scene_to_file(filename) # Just doing seems to cause issues with the shaders.
+			SessionManager.pass_through = true		
+		get_tree().change_scene_to_file("res://game_menu.tscn")
+		
+	else:
+		get_tree().change_scene_to_file("res://game_menu.tscn")
