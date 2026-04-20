@@ -20,7 +20,9 @@ func _ready() -> void:
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("Pause"):
+		await fader.on_fade_out_finished
+		get_tree().quit()
 
 func _on_button_pressed() -> void:
 	on_button_pressed.emit()
