@@ -1209,7 +1209,7 @@ offset_top = 137.0
 offset_right = 255.0
 offset_bottom = 168.0
 
-[node name="Button" type="Button" parent="Level buttons" unique_id=764628211]
+[node name="Button1" type="Button" parent="Level buttons" unique_id=764628211]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "1"
@@ -1240,6 +1240,7 @@ size_flags_horizontal = 3
 text = "6"
 
 [node name="Fader" parent="." unique_id=1757906040 instance=ExtResource("6_qus6b")]
+visible = false
 offset_left = -5.0
 offset_top = -3.0
 offset_right = 324.0
@@ -1247,7 +1248,7 @@ offset_bottom = 185.0
 FADE_IN_SPEED = 0.9
 FADE_OUT_SPEED = 1.2
 
-[connection signal="pressed" from="Level buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Level buttons/Button1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level buttons/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Level buttons/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Level buttons/Button4" to="." method="_on_button_4_pressed"]

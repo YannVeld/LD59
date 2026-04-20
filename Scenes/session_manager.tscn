@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cw6d15rv3vnk3"]
+
+[ext_resource type="Script" uid="uid://yp4pmfmfb53m" path="res://Scripts/session_manager.gd" id="1_0k6sh"]
+
+[node name="SessionManager" type="Node2D" unique_id=1532107626]
+script = ExtResource("1_0k6sh")
