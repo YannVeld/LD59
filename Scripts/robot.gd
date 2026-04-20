@@ -46,7 +46,7 @@ func _play_item_collect_particle(name: String) -> void:
 func _collect_item(item: Collectable) -> void:
 	print("Collected ", item.item_name)
 	print(item.turn_off_shader())
-	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_COLLECT)
+	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_COLLECT, false, 0.5)
 	item_collected.emit(item.name)
 	animated_sprite_2d.set_animation('jump')
 	last_item_collected = item.item_name
@@ -106,7 +106,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Signal Packets"):
 		if not (area.instruction == direction):
-			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE)
+			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE, true)
 			
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE

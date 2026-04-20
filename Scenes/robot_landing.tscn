@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cladj8f7p20s1" path="res://Scripts/robot_landing.gd" id="1_2p5yj"]
 [ext_resource type="Texture2D" uid="uid://30exet2ow18k" path="res://Sprites/Robot_land_shadow.png" id="2_2p5yj"]
 [ext_resource type="Texture2D" uid="uid://brnxcyh0ir6mu" path="res://Sprites/Robot_land.png" id="2_lqqwo"]
+[ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="4_n6cji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jk0tg"]
 atlas = ExtResource("2_lqqwo")
@@ -88,3 +89,5 @@ flip_h = true
 [node name="ShadowSprite" type="AnimatedSprite2D" parent="." unique_id=984474750]
 sprite_frames = SubResource("SpriteFrames_uinmr")
 flip_h = true
+
+[node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("4_n6cji")]

@@ -2,6 +2,7 @@ class_name RobotTakeoff extends Node2D
 
 @onready var _my_animator: AnimatedSprite2D = get_node("./AnimatedSprite2D")
 @onready var _landing_zone = get_node("../LandingZone")
+@onready var sound_player: SoundPlayer = $SoundPlayer
 
 const INIT_FLY_SPEED: float = 5.0
 const MAX_FLY_SPEED: float = 500.0
@@ -30,6 +31,7 @@ func start_takeoff():
 	visible = true
 	
 	_my_animator.play("takeoff")
+	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_TAKEOFF, false, 0.2)
 
 
 # Called when the node enters the scene tree for the first time.

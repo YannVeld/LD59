@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var _my_animator: AnimatedSprite2D = get_node("./AnimatedSprite2D")
 @onready var _my_shadow_animator: AnimatedSprite2D = get_node("./ShadowSprite")
+@onready var sound_player: SoundPlayer = $SoundPlayer
 
 @onready var _robot = get_node("../Robot")
 @onready var _landing_zone = get_node("../LandingZone")
@@ -55,4 +56,5 @@ func _process(delta: float) -> void:
 		_robot.set_process(true)
 		_robot.visible = true
 		_landing_zone.visible = true
+		sound_player.play_sound(SoundPlayer.Sounds.ROBOT_LAND, false, 0.0, true)
 		queue_free()
