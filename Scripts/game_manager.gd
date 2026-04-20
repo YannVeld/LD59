@@ -6,6 +6,7 @@ extends Node
 @onready var landing_zone: Area2D = $"../LandingZone"
 signal mission_accomplished
 @onready var animation_wait_timer: Timer = $AnimationWaitTimer
+@onready var sound_player: SoundPlayer = $SoundPlayer
 @onready var robot_takeoff: RobotTakeoff = $"../RobotTakeoff"
 
 var collection_status = Vector3(0,0,0)
@@ -32,6 +33,7 @@ func _on_robot_item_collected(name) -> void:
 		objectives_complete = true
 		print("objectives complete")
 		animation_wait_timer.start()
+		sound_player.play_sound(SoundPlayer.Sounds.ROBO_PHONE_HOME, false, 1.0)
 		
 func do_level_over():
 	robot.set_process(false)

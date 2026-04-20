@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pp473fcoac01"]
 
 [ext_resource type="Script" uid="uid://bpf3b4jc2l14t" path="res://Scripts/game_manager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="2_e5fcp"]
 
 [node name="GameManager" type="Node" unique_id=458423404]
 script = ExtResource("1_70yv6")
@@ -8,5 +9,7 @@ script = ExtResource("1_70yv6")
 [node name="AnimationWaitTimer" type="Timer" parent="." unique_id=1053192283]
 wait_time = 1.5
 one_shot = true
+
+[node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("2_e5fcp")]
 
 [connection signal="timeout" from="AnimationWaitTimer" to="." method="_on_animation_wait_timer_timeout"]
