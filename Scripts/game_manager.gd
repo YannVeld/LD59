@@ -45,7 +45,6 @@ func _on_robot_landing_zone_entered() -> void:
 	if objectives_complete:
 		"level over"
 		do_level_over()
-		
 
 func _on_animation_wait_timer_timeout() -> void:
 	mission_accomplished.emit(robot.position)

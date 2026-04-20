@@ -78,7 +78,7 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yaj6r"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -97,7 +97,7 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_scqq5"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -116,7 +116,7 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nmbfh"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -135,7 +135,7 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4ec"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -154,7 +154,7 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iit72"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -173,7 +173,7 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1uha"]
 shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
-shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
@@ -348,14 +348,6 @@ size_flags_horizontal = 3
 texture_normal = SubResource("AtlasTexture_41b0x")
 texture_pressed = SubResource("AtlasTexture_7e0qo")
 texture_hover = SubResource("AtlasTexture_0jcky")
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=143029500]
-offset_left = 147.0
-offset_top = 24.0
-offset_right = 187.0
-offset_bottom = 64.0
-scale = Vector2(0.32337213, 0.325985)
-color = Color(0, 1, 0, 0.4117647)
 
 [node name="Fader" parent="." unique_id=1757906040 instance=ExtResource("6_qus6b")]
 visible = false
