@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dqhvu560qpu8w"]
+[gd_scene format=4 uid="uid://425lkun8s4vr"]
 
 [ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_y0xe8"]
 [ext_resource type="PackedScene" uid="uid://bg34tnjmwlm3" path="res://Scenes/mirror.tscn" id="3_8tcn8"]
@@ -31,25 +31,25 @@ position = Vector2(151, 154)
 [node name="TwistVine" parent="." index="13" unique_id=256976179 instance=ExtResource("7_s8oj7")]
 position = Vector2(285, 101)
 
-[node name="Mirror2" parent="." index="17" unique_id=809691127 instance=ExtResource("3_8tcn8")]
+[node name="Mirror2" parent="." index="16" unique_id=809691127 instance=ExtResource("3_8tcn8")]
 position = Vector2(222, 19)
 rotation = 3.1415927
 rotation_speed = 1.0
 
-[node name="Mirror3" parent="." index="18" unique_id=1224264958 instance=ExtResource("3_8tcn8")]
+[node name="Mirror3" parent="." index="17" unique_id=1224264958 instance=ExtResource("3_8tcn8")]
 position = Vector2(263.00003, 19.999985)
 rotation = -1.839311
 rotation_speed = 1.0
 
-[node name="Mirror" parent="." index="19" unique_id=1952546217 instance=ExtResource("3_8tcn8")]
+[node name="Mirror" parent="." index="18" unique_id=1952546217 instance=ExtResource("3_8tcn8")]
 position = Vector2(57, 6)
 rotation_speed = 1.0
 
-[node name="AlienGreen" parent="." index="20" unique_id=1798181924 instance=ExtResource("9_yxclo")]
+[node name="AlienGreen" parent="." index="19" unique_id=1798181924 instance=ExtResource("9_yxclo")]
 position = Vector2(170, 38)
 
-[node name="AlienGreen2" parent="." index="21" unique_id=1957951933 instance=ExtResource("9_yxclo")]
+[node name="AlienGreen2" parent="." index="20" unique_id=1957951933 instance=ExtResource("9_yxclo")]
 position = Vector2(175, 15)
 
-[node name="AlienGreen3" parent="." index="22" unique_id=207989986 instance=ExtResource("9_yxclo")]
+[node name="AlienGreen3" parent="." index="21" unique_id=207989986 instance=ExtResource("9_yxclo")]
 position = Vector2(204, 49)

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b0u2dtg0u8l53"]
+
+[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_lyoih"]
+[ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="2_5lcx6"]
+[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="3_an40m"]
+[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="4_mu84n"]
+
+[node name="Level" unique_id=1798613870 instance=ExtResource("1_lyoih")]
+
+[node name="PauseScreen" parent="." index="7" unique_id=1965419860]
+visible = false
+
+[node name="BigMushroom" parent="." index="9" unique_id=1765231128 instance=ExtResource("2_5lcx6")]
+position = Vector2(93, 158)
+
+[node name="FruitTree" parent="." index="10" unique_id=1611624375 instance=ExtResource("3_an40m")]
+position = Vector2(128, 161)
+
+[node name="TwistVine" parent="." index="11" unique_id=854348799 instance=ExtResource("4_mu84n")]
+position = Vector2(160, 161)
