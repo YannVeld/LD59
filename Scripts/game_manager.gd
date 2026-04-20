@@ -50,7 +50,7 @@ func _on_robot_landing_zone_entered() -> void:
 func _on_animation_wait_timer_timeout() -> void:
 	mission_accomplished.emit(robot.position)
 
-func _on_robot_takeoff_takeoff_complete() -> void:
+func _on_fader_on_fade_out_finished() -> void:
 	SessionManager.level_status[SessionManager.current_level] = true
 	var next_level = SessionManager.get_suggested_level()
 	if next_level != 0:
@@ -59,4 +59,3 @@ func _on_robot_takeoff_takeoff_complete() -> void:
 		#get_tree().change_scene_to_file(filename) # Just doing seems to cause issues with the shaders.
 		SessionManager.pass_through = true		
 	get_tree().change_scene_to_file("res://game_menu.tscn")
-	

@@ -143,9 +143,11 @@ script = ExtResource("1_v8gq0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1234046396]
 sprite_frames = SubResource("SpriteFrames_xm42n")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885341486]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_hx44q")
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

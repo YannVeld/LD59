@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 		
 		WIGGLE_DIST += WIGGLE_DIST_CHANGE*delta
 
-	if position.y <= 0.0:
+	if position.y <= 64.0:
 		takeoff_complete.emit()
 		
 
