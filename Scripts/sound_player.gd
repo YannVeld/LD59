@@ -2,25 +2,30 @@ class_name SoundPlayer extends AudioStreamPlayer
 
 enum Sounds {NULL=0,
 			 ROBOT_COLLECT, ROBOT_BUMP, ROBOT_RECEIVE,
-			 ROBOT_TAKEOFF, ROBOT_LAND, ROBO_PHONE_HOME,
+			 ROBOT_TAKEOFF, ROBOT_LAND, ROBOT_STEP,
+			 ROBO_PHONE_HOME, ROBOT_REJECT,
 			 TRANSMITTER_FIRE, TRANSMITTER_LAND, TRANSMITTER_READY,
+			 TRANSMITTER_FALLING,
 			 PACKET_REFLECTED, PACKET_BLOCKED}
 const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBOT_COLLECT: preload("res://Sounds/Pickup.wav"),
 	Sounds.ROBOT_BUMP: preload("res://Sounds/Bump.wav"),
 	Sounds.ROBOT_RECEIVE: preload("res://Sounds/Pip.wav"),
 	Sounds.ROBOT_TAKEOFF: preload("res://Sounds/Takeoff.wav"),
-	Sounds.ROBOT_LAND: preload("res://Sounds/Hurt.wav"),
+	Sounds.ROBOT_LAND: preload("res://Sounds/RobotLand.wav"),
+	Sounds.ROBOT_STEP: preload("res://Sounds/Step.wav"),
+	Sounds.ROBOT_REJECT: preload("res://Sounds/Error.wav"),
 	Sounds.ROBO_PHONE_HOME: preload("res://Sounds/robo_phone_home_fast.wav"),
 	Sounds.TRANSMITTER_FIRE: preload("res://Sounds/Shoot.wav"),
 	Sounds.TRANSMITTER_LAND: preload("res://Sounds/Hurt.wav"),
 	Sounds.TRANSMITTER_READY: preload("res://Sounds/TowerReady.wav"),
+	Sounds.TRANSMITTER_FALLING: preload("res://Sounds/TowerFall.wav"),
 	Sounds.PACKET_REFLECTED: preload("res://Sounds/Reflect.wav"),
 	Sounds.PACKET_BLOCKED: preload("res://Sounds/Blocked.wav")
 }
 	
-const PITCH_MIN: float = 0.8
-const PITCH_MAX: float = 1.2
+const PITCH_MIN: float = 0.5 #0.8
+const PITCH_MAX: float = 2.0 #1.2
 
 var _prev_sound: Sounds = Sounds.NULL
 	

@@ -30,6 +30,8 @@ func _ready() -> void:
 	position = Vector2(_transmitter.position.x, START_Y)
 	_transmitter.set_process(false)
 	_transmitter.visible = false
+	
+	sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_FALLING, false, 0.5, false, true)
 
 
 func _do_fall(delta: float) -> void:

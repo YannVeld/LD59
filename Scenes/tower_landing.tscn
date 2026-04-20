@@ -116,6 +116,7 @@ damping_max = 100.0
 color = Color(0.6117647, 0.39607844, 0.42352942, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=420894691]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_e0hqy")
 
 [node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("3_qes3j")]

@@ -19,9 +19,11 @@ default_color = Color(0.26666668, 0.5803922, 0.5372549, 1)
 script = ExtResource("2_64nqp")
 
 [node name="TowerSprite" type="Sprite2D" parent="." unique_id=1209487833]
+z_index = 6
 texture = ExtResource("3_rvwfv")
 
 [node name="DishSprite" type="Sprite2D" parent="." unique_id=266685894]
+z_index = 7
 position = Vector2(0, -7)
 texture = ExtResource("4_0cioi")
 offset = Vector2(4, -4)
