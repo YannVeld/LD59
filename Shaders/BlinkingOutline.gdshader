@@ -19,7 +19,7 @@ void fragment() {
 	outline += vec4(1.0, 1.0, 1.0, texture(TEXTURE, UV - right).a);
 	outline += vec4(1.0, 1.0, 1.0, texture(TEXTURE, UV + right).a);
 
-	outline *= 1. - texture(TEXTURE, UV).a;
+	outline *= 1. - float(texture(TEXTURE, UV).a > 0.0);
 	outline = clamp(outline, 0.0, 1.0);
 	
 	float t = 0.5 * (1.0 + cos(2.0 * PI * TIME / fade_time));
