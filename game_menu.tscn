@@ -75,6 +75,13 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaj6r"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_scqq5"]
 atlas = ExtResource("8_yd342")
 region = Rect2(0, 0, 16, 16)
@@ -92,7 +99,7 @@ shader = ExtResource("9_4iehe")
 shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
 shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
 shader_parameter/fade_time = 4.0
-shader_parameter/do_blinking = true
+shader_parameter/do_blinking = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo4ec"]
 atlas = ExtResource("10_0im1f")
@@ -106,6 +113,13 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("10_0im1f")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmbfh"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0tny"]
 atlas = ExtResource("11_6juqt")
 region = Rect2(0, 0, 16, 16)
@@ -117,6 +131,13 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfeyw"]
 atlas = ExtResource("11_6juqt")
 region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4ec"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_naein"]
 atlas = ExtResource("12_scqq5")
@@ -130,6 +151,13 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("12_scqq5")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iit72"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6154r"]
 atlas = ExtResource("13_yaj6r")
 region = Rect2(0, 0, 16, 16)
@@ -141,6 +169,13 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_em4j1"]
 atlas = ExtResource("13_yaj6r")
 region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1uha"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(0.14, 0.1, 0.27, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41b0x"]
 atlas = ExtResource("14_nmbfh")
@@ -243,6 +278,7 @@ offset_right = 255.0
 offset_bottom = 98.520004
 
 [node name="Button1" type="TextureButton" parent="Level buttons" unique_id=1913659858]
+material = SubResource("ShaderMaterial_yaj6r")
 layout_mode = 0
 offset_left = 81.0
 offset_top = -44.519997
@@ -266,6 +302,7 @@ texture_pressed = SubResource("AtlasTexture_iit72")
 texture_hover = SubResource("AtlasTexture_l1uha")
 
 [node name="Button3" type="TextureButton" parent="Level buttons" unique_id=891235830]
+material = SubResource("ShaderMaterial_nmbfh")
 layout_mode = 0
 offset_left = 96.0
 offset_top = -12.519997
@@ -277,6 +314,7 @@ texture_pressed = SubResource("AtlasTexture_2r5qu")
 texture_hover = SubResource("AtlasTexture_rfeyw")
 
 [node name="Button4" type="TextureButton" parent="Level buttons" unique_id=1692376545]
+material = SubResource("ShaderMaterial_mo4ec")
 layout_mode = 0
 offset_left = 123.0
 offset_top = 7.4800034
@@ -288,6 +326,7 @@ texture_pressed = SubResource("AtlasTexture_qf3pj")
 texture_hover = SubResource("AtlasTexture_5gaap")
 
 [node name="Button5" type="TextureButton" parent="Level buttons" unique_id=1009764604]
+material = SubResource("ShaderMaterial_iit72")
 layout_mode = 0
 offset_left = 110.0
 offset_top = 29.480003
@@ -299,6 +338,7 @@ texture_pressed = SubResource("AtlasTexture_1emyl")
 texture_hover = SubResource("AtlasTexture_em4j1")
 
 [node name="Button6" type="TextureButton" parent="Level buttons" unique_id=1553277886]
+material = SubResource("ShaderMaterial_l1uha")
 layout_mode = 0
 offset_left = 76.0
 offset_top = 36.480003
