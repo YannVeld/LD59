@@ -53,10 +53,10 @@ position = Vector2(163, 168)
 rotation_speed = 0.2
 
 [node name="OilPatch4" parent="." index="23" unique_id=1967434417 instance=ExtResource("7_87x5k")]
-position = Vector2(274, 103)
+position = Vector2(280, 104)
 
 [node name="OilPatch5" parent="." index="24" unique_id=694824995 instance=ExtResource("7_87x5k")]
-position = Vector2(253, 103)
+position = Vector2(248, 104)
 
 [node name="AlienGreen" parent="." index="25" unique_id=1798181924 instance=ExtResource("9_yfwe1")]
 position = Vector2(63, 97)

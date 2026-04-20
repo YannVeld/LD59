@@ -1213,10 +1213,10 @@ position = Vector2(104, 65)
 position = Vector2(104, 49)
 
 [node name="OilPatch3" parent="." index="16" unique_id=1298456807 instance=ExtResource("8_p2trt")]
-position = Vector2(232, 77)
+position = Vector2(232, 72)
 
 [node name="OilPatch4" parent="." index="17" unique_id=1338801246 instance=ExtResource("8_p2trt")]
-position = Vector2(232, 99)
+position = Vector2(232, 104)
 
 [node name="OilPatch5" parent="." index="20" unique_id=434007042 instance=ExtResource("8_p2trt")]
 position = Vector2(104, 34)
