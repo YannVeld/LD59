@@ -23,6 +23,8 @@ var time_since_collision: float = 999.0
 var last_item_collected: String = ""
 const COLL_TIME_IDLE: float = 0.2
 
+const STEP_FRAMES = [3, 7, 11]
+
 var is_on_last_frame: bool:
 	get: return animated_sprite_2d.frame >= animated_sprite_2d.sprite_frames.get_frame_count(animated_sprite_2d.animation) - 1
 
@@ -129,3 +131,9 @@ func _on_particle_timer_timeout() -> void:
 
 func _on_slip_timer_timeout() -> void:
 	speed = SPEED # Replace with function body.
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if animated_sprite_2d.animation != "walk": return
+	if not animated_sprite_2d.frame in STEP_FRAMES: return
+	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_STEP, true, 0.0, false, false)
