@@ -1205,6 +1205,9 @@ position = Vector2(288, 35)
 [node name="TwistVine" parent="." index="7" unique_id=1775137693 instance=ExtResource("7_dguho")]
 position = Vector2(35, 52)
 
+[node name="Fader" parent="." index="12" unique_id=1757906040]
+visible = false
+
 [node name="OilPatch" parent="." index="14" unique_id=1041192443 instance=ExtResource("8_p2trt")]
 position = Vector2(104, 83)
 
