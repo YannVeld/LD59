@@ -45,7 +45,7 @@ func _input(event) -> void:
 			SignalPacketInstance.position = dish.global_position
 			SignalPacketInstance.add_to_group("Signal Packets")
 			$"../SignalPackets".add_child(SignalPacketInstance)
-			sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_FIRE, true)
+			sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_FIRE)
 	return 
 	
 

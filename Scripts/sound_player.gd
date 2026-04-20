@@ -1,8 +1,9 @@
 class_name SoundPlayer extends AudioStreamPlayer
 
-enum Sounds {ROBOT_COLLECT, ROBOT_BUMP, ROBOT_RECEIVE,
+enum Sounds {NULL=0,
+			 ROBOT_COLLECT, ROBOT_BUMP, ROBOT_RECEIVE,
 			 ROBOT_TAKEOFF, ROBOT_LAND,
-			 TRANSMITTER_FIRE, TRANSMITTER_LAND,
+			 TRANSMITTER_FIRE, TRANSMITTER_LAND, TRANSMITTER_READY,
 			 PACKET_REFLECTED, PACKET_BLOCKED}
 const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBOT_COLLECT: preload("res://Sounds/Pickup.wav"),
@@ -12,12 +13,15 @@ const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBOT_LAND: preload("res://Sounds/Hurt.wav"),
 	Sounds.TRANSMITTER_FIRE: preload("res://Sounds/Shoot.wav"),
 	Sounds.TRANSMITTER_LAND: preload("res://Sounds/Hurt.wav"),
+	Sounds.TRANSMITTER_READY: preload("res://Sounds/TowerReady.wav"),
 	Sounds.PACKET_REFLECTED: preload("res://Sounds/Reflect.wav"),
 	Sounds.PACKET_BLOCKED: preload("res://Sounds/Blocked.wav")
 }
 	
 const PITCH_MIN: float = 0.8
 const PITCH_MAX: float = 1.2
+
+var _prev_sound: Sounds = Sounds.NULL
 	
 func play_sound_stream(sound_stream: AudioStream, randomize_pitch: bool=false, delay: float=0.0, live_and_destroy: bool=false) -> void:
 	if sound_stream == null: return
@@ -40,7 +44,10 @@ func play_sound_stream(sound_stream: AudioStream, randomize_pitch: bool=false, d
 		queue_free()
 	
 
-func play_sound(sound: Sounds, randomize_pitch: bool=false, delay: float=0.0, live_and_destroy: bool=false) -> void:
+func play_sound(sound: Sounds, randomize_pitch: bool=false, delay: float=0.0, live_and_destroy: bool=false, 
+				play_once: bool = false) -> void:
 	if not sound in _sound_dict: return
+	if play_once and (_prev_sound == sound): return
 	
+	_prev_sound = sound
 	play_sound_stream(_sound_dict[sound], randomize_pitch, delay, live_and_destroy)
