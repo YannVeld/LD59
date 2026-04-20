@@ -39,6 +39,10 @@ window/stretch/scale_mode="integer"
 Mirrors=""
 "Oil Patches"=""
 
+[gui]
+
+theme/custom_font="uid://b851okx14utdn"
+
 [input]
 
 move_left={
