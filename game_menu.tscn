@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wdeln8oy0ae2" path="res://Scripts/game_menu.gd" id="1_qus6b"]
 [ext_resource type="Texture2D" uid="uid://d04bk6cqcvwpe" path="res://Sprites/menu/MainMenu_planet.png" id="2_jprcw"]
-[ext_resource type="Script" path="res://Scripts/menu_star.gd" id="3_3rcmp"]
+[ext_resource type="Script" uid="uid://dq1husgkxx61n" path="res://Scripts/menu_star.gd" id="3_3rcmp"]
 [ext_resource type="Texture2D" uid="uid://dh3cif0i5ivkj" path="res://Sprites/menu/MenuSpaceship.png" id="3_qus6b"]
 [ext_resource type="Texture2D" uid="uid://co6t63gh7nviq" path="res://Sprites/menu/MainMenu_title.png" id="3_xxfb2"]
 [ext_resource type="Texture2D" uid="uid://crb0lf6167d7w" path="res://Sprites/menu/MainMenu_madeby.png" id="4_qus6b"]
@@ -355,8 +355,6 @@ offset_left = -5.0
 offset_top = -3.0
 offset_right = 324.0
 offset_bottom = 185.0
-FADE_IN_SPEED = 0.9
-FADE_OUT_SPEED = 1.2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1694349846]
 z_index = -4096
@@ -376,6 +374,7 @@ texture_normal = SubResource("AtlasTexture_4iehe")
 texture_pressed = SubResource("AtlasTexture_0im1f")
 texture_hover = SubResource("AtlasTexture_6juqt")
 
+[connection signal="on_button_pressed" from="." to="Fader" method="_on_game_menu_on_button_pressed"]
 [connection signal="pressed" from="Level buttons/Button1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level buttons/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Level buttons/Button3" to="." method="_on_button_3_pressed"]

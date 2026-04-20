@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var level_buttons = $"Level buttons"
+@onready var fader = $"Fader"
+
+signal on_button_pressed
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(SessionManager.level_status)
@@ -19,26 +23,44 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 1
 	get_tree().change_scene_to_file("res://level1.tscn")
 
 func _on_button_2_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 2
 	get_tree().change_scene_to_file("res://level2.tscn")
 
 func _on_button_3_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 3
 	get_tree().change_scene_to_file("res://level3.tscn")
 
 func _on_button_4_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 4
 	get_tree().change_scene_to_file("res://level4.tscn")
 
 func _on_button_5_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 5
 	get_tree().change_scene_to_file("res://level5.tscn")
 
 func _on_button_6_pressed() -> void:
+	on_button_pressed.emit()
+	await fader.on_fade_out_finished
+	
 	SessionManager.current_level = 6
 	get_tree().change_scene_to_file("res://level6.tscn")
 	

@@ -80,4 +80,4 @@ position = Vector2(60, 118)
 [connection signal="on_fade_out_finished" from="Fader" to="GameManager" method="_on_fader_on_fade_out_finished"]
 [connection signal="pressed" from="PauseScreen/VBoxContainer/MainMenuButton" to="PauseScreen" method="_on_main_menu_button_pressed"]
 [connection signal="phoneHome" from="CircleRenderer" to="LandingZone" method="_on_circle_renderer_phone_home"]
-[connection signal="flying_starts" from="RobotTakeoff" to="Fader" method="_on_robot_takeoff_flying_starts"]
+[connection signal="takeoff_complete" from="RobotTakeoff" to="Fader" method="_on_robot_takeoff_takeoff_complete"]
