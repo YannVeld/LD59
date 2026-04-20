@@ -13,6 +13,8 @@ var disable_aimguide = false
 
 var transmitter_ready = false
 
+signal on_instruction_fire(direction: String)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +46,7 @@ func _input(event) -> void:
 			SignalPacketInstance.position = dish.global_position
 			SignalPacketInstance.add_to_group("Signal Packets")
 			$"../SignalPackets".add_child(SignalPacketInstance)
+			on_instruction_fire.emit(direction)
 	return 
 	
 
