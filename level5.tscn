@@ -59,13 +59,13 @@ position = Vector2(274, 103)
 position = Vector2(253, 103)
 
 [node name="AlienGreen" parent="." index="25" unique_id=1798181924 instance=ExtResource("9_yfwe1")]
-position = Vector2(55, 90)
+position = Vector2(63, 97)
 
 [node name="AlienGreen2" parent="." index="26" unique_id=2138089992 instance=ExtResource("9_yfwe1")]
 position = Vector2(31, 121)
 
 [node name="AlienGreen3" parent="." index="27" unique_id=21040113 instance=ExtResource("9_yfwe1")]
-position = Vector2(74, 119)
+position = Vector2(84, 134)
 
 [node name="AlienGreen4" parent="." index="28" unique_id=776653578 instance=ExtResource("9_yfwe1")]
-position = Vector2(13, 13)
+position = Vector2(109, 160)
