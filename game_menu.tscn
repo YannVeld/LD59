@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://crb0lf6167d7w" path="res://Sprites/menu/MainMenu_madeby.png" id="4_qus6b"]
 [ext_resource type="PackedScene" uid="uid://bsheukrvpenne" path="res://Scenes/fader.tscn" id="6_qus6b"]
 [ext_resource type="Texture2D" uid="uid://bg4belcijkqxf" path="res://Sprites/menu/MenuStar.png" id="7_wr0q8"]
+[ext_resource type="Texture2D" uid="uid://d0nreyg0ltvor" path="res://Sprites/menu/LevelButton_1.png" id="8_yd342"]
+[ext_resource type="Shader" uid="uid://did6plis7b6yh" path="res://Shaders/BlinkingOutline.gdshader" id="9_4iehe"]
+[ext_resource type="Texture2D" uid="uid://b0el27p8lxarx" path="res://Sprites/menu/ExitButton.png" id="9_pbvm6"]
+[ext_resource type="Texture2D" uid="uid://d0cn2tx11jgmj" path="res://Sprites/menu/LevelButton_2.png" id="10_0im1f"]
+[ext_resource type="Texture2D" uid="uid://dgawdoidtcd7p" path="res://Sprites/menu/LevelButton_3.png" id="11_6juqt"]
+[ext_resource type="Texture2D" uid="uid://gxlu6yowlo7c" path="res://Sprites/menu/LevelButton_4.png" id="12_scqq5"]
+[ext_resource type="Texture2D" uid="uid://ptrkxlvdgav5" path="res://Sprites/menu/LevelButton_5.png" id="13_yaj6r"]
+[ext_resource type="Texture2D" uid="uid://dhr2pmqm2gyid" path="res://Sprites/menu/LevelButton_6.png" id="14_nmbfh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbvm6"]
 atlas = ExtResource("7_wr0q8")
@@ -66,6 +74,132 @@ animations = [{
 "name": &"default",
 "speed": 8.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaj6r"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scqq5"]
+atlas = ExtResource("8_yd342")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaj6r"]
+atlas = ExtResource("8_yd342")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmbfh"]
+atlas = ExtResource("8_yd342")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scqq5"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo4ec"]
+atlas = ExtResource("10_0im1f")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iit72"]
+atlas = ExtResource("10_0im1f")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1uha"]
+atlas = ExtResource("10_0im1f")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmbfh"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0tny"]
+atlas = ExtResource("11_6juqt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r5qu"]
+atlas = ExtResource("11_6juqt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfeyw"]
+atlas = ExtResource("11_6juqt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4ec"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naein"]
+atlas = ExtResource("12_scqq5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf3pj"]
+atlas = ExtResource("12_scqq5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gaap"]
+atlas = ExtResource("12_scqq5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iit72"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6154r"]
+atlas = ExtResource("13_yaj6r")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1emyl"]
+atlas = ExtResource("13_yaj6r")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em4j1"]
+atlas = ExtResource("13_yaj6r")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1uha"]
+shader = ExtResource("9_4iehe")
+shader_parameter/outline_color_min = Color(0.28, 0.23, 0.52, 0)
+shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
+shader_parameter/fade_time = 4.0
+shader_parameter/do_blinking = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41b0x"]
+atlas = ExtResource("14_nmbfh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e0qo"]
+atlas = ExtResource("14_nmbfh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jcky"]
+atlas = ExtResource("14_nmbfh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iehe"]
+atlas = ExtResource("9_pbvm6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0im1f"]
+atlas = ExtResource("9_pbvm6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6juqt"]
+atlas = ExtResource("9_pbvm6")
+region = Rect2(32, 0, 16, 16)
 
 [node name="GameMenu" type="Node2D" unique_id=1798613870]
 script = ExtResource("1_qus6b")
@@ -135,41 +269,85 @@ texture = ExtResource("3_xxfb2")
 position = Vector2(160, 90)
 texture = ExtResource("4_qus6b")
 
-[node name="Level buttons" type="HBoxContainer" parent="." unique_id=1728283557]
+[node name="Level buttons" type="Control" parent="." unique_id=806856561]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 65.0
 offset_top = 67.52
 offset_right = 255.0
 offset_bottom = 98.520004
 
-[node name="Button1" type="Button" parent="Level buttons" unique_id=764628211]
-layout_mode = 2
+[node name="Button1" type="TextureButton" parent="Level buttons" unique_id=1913659858]
+material = SubResource("ShaderMaterial_yaj6r")
+layout_mode = 0
+offset_left = 81.0
+offset_top = -44.519997
+offset_right = 109.0
+offset_bottom = -13.519997
 size_flags_horizontal = 3
-text = "1"
+texture_normal = SubResource("AtlasTexture_scqq5")
+texture_pressed = SubResource("AtlasTexture_yaj6r")
+texture_hover = SubResource("AtlasTexture_nmbfh")
 
-[node name="Button2" type="Button" parent="Level buttons" unique_id=1145476549]
-layout_mode = 2
+[node name="Button2" type="TextureButton" parent="Level buttons" unique_id=913992922]
+material = SubResource("ShaderMaterial_scqq5")
+layout_mode = 0
+offset_left = 104.0
+offset_top = -40.519997
+offset_right = 132.0
+offset_bottom = -9.519997
 size_flags_horizontal = 3
-text = "2"
+texture_normal = SubResource("AtlasTexture_mo4ec")
+texture_pressed = SubResource("AtlasTexture_iit72")
+texture_hover = SubResource("AtlasTexture_l1uha")
 
-[node name="Button3" type="Button" parent="Level buttons" unique_id=23963129]
-layout_mode = 2
+[node name="Button3" type="TextureButton" parent="Level buttons" unique_id=891235830]
+material = SubResource("ShaderMaterial_nmbfh")
+layout_mode = 0
+offset_left = 96.0
+offset_top = -12.519997
+offset_right = 125.0
+offset_bottom = 18.480003
 size_flags_horizontal = 3
-text = "3"
+texture_normal = SubResource("AtlasTexture_x0tny")
+texture_pressed = SubResource("AtlasTexture_2r5qu")
+texture_hover = SubResource("AtlasTexture_rfeyw")
 
-[node name="Button4" type="Button" parent="Level buttons" unique_id=1511021715]
-layout_mode = 2
+[node name="Button4" type="TextureButton" parent="Level buttons" unique_id=1692376545]
+material = SubResource("ShaderMaterial_mo4ec")
+layout_mode = 0
+offset_left = 123.0
+offset_top = 7.4800034
+offset_right = 151.0
+offset_bottom = 38.480003
 size_flags_horizontal = 3
-text = "4"
+texture_normal = SubResource("AtlasTexture_naein")
+texture_pressed = SubResource("AtlasTexture_qf3pj")
+texture_hover = SubResource("AtlasTexture_5gaap")
 
-[node name="Button5" type="Button" parent="Level buttons" unique_id=2041245639]
-layout_mode = 2
+[node name="Button5" type="TextureButton" parent="Level buttons" unique_id=1009764604]
+material = SubResource("ShaderMaterial_iit72")
+layout_mode = 0
+offset_left = 110.0
+offset_top = 29.480003
+offset_right = 138.0
+offset_bottom = 60.480003
 size_flags_horizontal = 3
-text = "5"
+texture_normal = SubResource("AtlasTexture_6154r")
+texture_pressed = SubResource("AtlasTexture_1emyl")
+texture_hover = SubResource("AtlasTexture_em4j1")
 
-[node name="Button6" type="Button" parent="Level buttons" unique_id=2096303132]
-layout_mode = 2
+[node name="Button6" type="TextureButton" parent="Level buttons" unique_id=1553277886]
+material = SubResource("ShaderMaterial_l1uha")
+layout_mode = 0
+offset_left = 76.0
+offset_top = 36.480003
+offset_right = 105.0
+offset_bottom = 67.48
 size_flags_horizontal = 3
-text = "6"
+texture_normal = SubResource("AtlasTexture_41b0x")
+texture_pressed = SubResource("AtlasTexture_7e0qo")
+texture_hover = SubResource("AtlasTexture_0jcky")
 
 [node name="Fader" parent="." unique_id=1757906040 instance=ExtResource("6_qus6b")]
 visible = false
@@ -182,12 +360,21 @@ FADE_OUT_SPEED = 1.2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1694349846]
 z_index = -4096
-offset_left = -250.0
-offset_top = -135.0
-offset_right = 675.0
-offset_bottom = 387.0
+offset_left = -116.0
+offset_top = -157.0
+offset_right = 809.0
+offset_bottom = 365.0
 mouse_filter = 2
 color = Color(0.18431373, 0.16862746, 0.36078432, 1)
+
+[node name="QuitButton" type="TextureButton" parent="." unique_id=952637338]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture_normal = SubResource("AtlasTexture_4iehe")
+texture_pressed = SubResource("AtlasTexture_0im1f")
+texture_hover = SubResource("AtlasTexture_6juqt")
 
 [connection signal="pressed" from="Level buttons/Button1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Level buttons/Button2" to="." method="_on_button_2_pressed"]
@@ -195,3 +382,4 @@ color = Color(0.18431373, 0.16862746, 0.36078432, 1)
 [connection signal="pressed" from="Level buttons/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Level buttons/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Level buttons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

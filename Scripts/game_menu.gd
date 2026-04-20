@@ -7,7 +7,8 @@ func _ready() -> void:
 	mark_completed_levels()
 	if SessionManager.get_suggested_level() != 0:
 		mark_button_as_suggested(level_buttons.get_child(SessionManager.get_suggested_level()-1))
-	
+	#print($"Level buttons/Button3".get_node().has_child(rect))
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -42,9 +43,17 @@ func mark_completed_levels():
 			mark_button_as_complete(level_buttons.get_child(i-1))
 
 func mark_button_as_complete(button):
-	print("need to mark ", button, " as complete")
-	button.set("theme_override_colors/font_color", Color.GREEN)
+	var rect = ColorRect.new()
+	rect.set_size(Vector2(13,13))
+	rect.set_position(Vector2(1,1))
+	rect.color = Color(0.2,0.6,0.1,0.5)
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	button.add_child(rect)
 	pass
 	
 func mark_button_as_suggested(button):
-	button.set("theme_override_colors/font_color", Color.RED)
+	button.material.set_shader_parameter('do_blinking', true)
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
