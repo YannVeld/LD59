@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drb8fb83hvckb" path="res://Scripts/tower_landing.gd" id="1_gddwu"]
 [ext_resource type="Texture2D" uid="uid://c6e2kwkirxle4" path="res://Sprites/Radiotower_fall.png" id="2_qes3j"]
+[ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="3_qes3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e21v8"]
 atlas = ExtResource("2_qes3j")
@@ -116,3 +117,5 @@ color = Color(0.6117647, 0.39607844, 0.42352942, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=420894691]
 sprite_frames = SubResource("SpriteFrames_e0hqy")
+
+[node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("3_qes3j")]

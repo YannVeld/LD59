@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var _my_animator: AnimatedSprite2D = get_node("./AnimatedSprite2D")
 @onready var _my_particle_emitter: CPUParticles2D = get_node("./CPUParticles2D")
+@onready var sound_player: SoundPlayer = $SoundPlayer
 
 @onready var _transmitter = get_node("../Transmitter")
 
@@ -46,6 +47,7 @@ func _do_fall(delta: float) -> void:
 		_has_landed = true
 		_my_animator.set_frame(1)
 		_my_particle_emitter.emitting = true
+		sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_LAND)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
