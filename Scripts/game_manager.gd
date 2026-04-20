@@ -39,6 +39,7 @@ func do_level_over():
 	robot.set_process(false)
 	robot.visible = false
 	robot_takeoff.start_takeoff()
+	sound_player.play_sound(SoundPlayer.Sounds.SUCCES_JINGLE)
 
 func _on_robot_landing_zone_entered() -> void:
 	print("Landing zone entered")

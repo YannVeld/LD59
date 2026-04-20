@@ -11,8 +11,9 @@ shader_parameter/outline_color_max = Color(1, 0.95686275, 0.8784314, 1)
 shader_parameter/fade_time = 4.0
 shader_parameter/do_blinking = false
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0430f"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5e2q"]
 radius = 3.0
+height = 8.0
 
 [node name="LandingZone" type="Area2D" unique_id=799687337]
 script = ExtResource("1_e5e2q")
@@ -22,4 +23,4 @@ material = SubResource("ShaderMaterial_e5e2q")
 texture = ExtResource("3_e5e2q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057932904]
-shape = SubResource("CircleShape2D_0430f")
+shape = SubResource("CapsuleShape2D_e5e2q")
