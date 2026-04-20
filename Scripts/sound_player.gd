@@ -18,7 +18,7 @@ const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBO_PHONE_HOME: preload("res://Sounds/robo_phone_home_fast.wav"),
 	Sounds.TRANSMITTER_FIRE: preload("res://Sounds/Shoot.wav"),
 	Sounds.TRANSMITTER_LAND: preload("res://Sounds/Hurt.wav"),
-	Sounds.TRANSMITTER_READY: preload("res://Sounds/TowerReady.wav"),
+	Sounds.TRANSMITTER_READY: preload("res://Sounds/TowerReady2.wav"),
 	Sounds.TRANSMITTER_FALLING: preload("res://Sounds/TowerFall.wav"),
 	Sounds.PACKET_REFLECTED: preload("res://Sounds/Reflect.wav"),
 	Sounds.PACKET_BLOCKED: preload("res://Sounds/Blocked.wav")
