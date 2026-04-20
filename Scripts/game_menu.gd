@@ -9,10 +9,15 @@ signal on_button_pressed
 func _ready() -> void:
 	print(SessionManager.level_status)
 	mark_completed_levels()
+	$MainMenuThankyou.modulate.a=0
 	if SessionManager.get_suggested_level() != 0:
 		mark_button_as_suggested(level_buttons.get_child(SessionManager.get_suggested_level()-1))
-	#print($"Level buttons/Button3".get_node().has_child(rect))
-
+	else:
+	#if true:
+		for button in $"Level buttons".get_children():
+			button.hide()
+		show_thank_you_screen()
+	
 	if SessionManager.pass_through:
 		SessionManager.pass_through = false
 		var filename  = "res://level"+str(SessionManager.current_level)+".tscn"
@@ -86,3 +91,22 @@ func mark_button_as_suggested(button):
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.
+	
+func modulate_in(thing, duration):
+	thing.modulate.a = 0
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 1., duration)
+	
+func modulate_out(thing, duration):
+	thing.self_modulate.a = 1
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 0., duration)
+	
+func show_thank_you_screen():
+	modulate_out($Title, 3)
+	$MainMenuThankyou/Timer.start(3)
+	for button in $"Level buttons".get_children():
+		modulate_out(button, 3)
+	
+func _on_timer_timeout() -> void:
+	modulate_in($MainMenuThankyou, 3)
