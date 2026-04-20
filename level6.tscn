@@ -1,20 +1,71 @@
-[gd_scene format=3 uid="uid://b0u2dtg0u8l53"]
+[gd_scene format=4 uid="uid://cgffuvrlj4as5"]
 
-[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_lyoih"]
-[ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="2_5lcx6"]
-[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="3_an40m"]
-[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="4_mu84n"]
+[ext_resource type="PackedScene" uid="uid://duem7xuf5pkr7" path="res://template.tscn" id="1_yg073"]
+[ext_resource type="TileSet" uid="uid://d4h3vg5fllrxf" path="res://Sprites/terrain_tile_set.tres" id="2_vfli8"]
+[ext_resource type="PackedScene" uid="uid://4tfqfu7ls7vo" path="res://Scenes/big_mushroom.tscn" id="3_puaxc"]
+[ext_resource type="PackedScene" uid="uid://cmyiis26cf7hl" path="res://Scenes/fruit_tree.tscn" id="4_psex6"]
+[ext_resource type="PackedScene" uid="uid://csdok253tnkql" path="res://Scenes/twisty_vines.tscn" id="5_s6sau"]
+[ext_resource type="PackedScene" uid="uid://bg34tnjmwlm3" path="res://Scenes/mirror.tscn" id="6_i6aup"]
+[ext_resource type="PackedScene" uid="uid://dt2myv41h3cv8" path="res://Scenes/alien_green.tscn" id="7_fosrl"]
+[ext_resource type="PackedScene" uid="uid://dooujn2jr3w61" path="res://Scenes/oil_patch.tscn" id="7_yg073"]
 
-[node name="Level" unique_id=1798613870 instance=ExtResource("1_lyoih")]
+[node name="Level" unique_id=1798613870 instance=ExtResource("1_yg073")]
 
-[node name="PauseScreen" parent="." index="7" unique_id=1965419860]
-visible = false
+[node name="Paths" type="TileMapLayer" parent="." index="1" unique_id=1200983513]
+tile_set = ExtResource("2_vfli8")
 
-[node name="BigMushroom" parent="." index="9" unique_id=1765231128 instance=ExtResource("2_5lcx6")]
-position = Vector2(93, 158)
+[node name="Obstacles" type="TileMapLayer" parent="." index="2" unique_id=1767800519]
+tile_map_data = PackedByteArray("AAD//wwAAQAAAAIAAAD//wsAAQAFAAIAAAD//woAAQAFAAIAAAD//wkAAQAFAAIAAAD//wgAAQAFAAIAAAD//wcAAQAFAAIAAAD//wYAAQAFAAIAAAD//wUAAQAFAAIAAAD//wQAAQAFAAIAAAD//wMAAQAFAAIAAAD//wIAAQAAAAEAAAD//wEAAQAAAAEAAAD//wAAAQAAAAEAAAD/////AQAAAAAAAAAAAP//AQABAAAAAAABAP//AQABAAAAAAACAP//AQABAAAAAAADAP//AQABAAAAAAAEAP//AQABAAAAAAAFAP//AQABAAAAAAAGAP//AQABAAAAAAAHAP//AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAALAP//AQABAAAAAAAMAP//AQABAAAAAAANAP//AQABAAAAAAAOAP//AQABAAAAAAAPAP//AQABAAAAAAAQAP//AQABAAAAAAARAP//AQABAAAAAAASAP//AQABAAAAAAATAP//AQABAAAAAAAUAP//AQACAAAAAAAUAAAAAQACAAEAAAAUAAEAAQACAAEAAAAUAAIAAQACAAEAAAAUAAMAAQACAAEAAAAUAAQAAQACAAEAAAAUAAUAAQACAAEAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAQACAAEAAAAUAAkAAQACAAEAAAAUAAoAAQADAAEAAAAUAAsAAQABAAEAAAAUAAwAAQACAAIAAAAAAAwAAQAEAAAAAAABAAwAAQAEAAAAAAACAAwAAQAEAAAAAAADAAwAAQAEAAAAAAAEAAwAAQAEAAAAAAAFAAwAAQAEAAAAAAAGAAwAAQAEAAAAAAAHAAwAAQABAAIAAAAIAAwAAQABAAIAAAAJAAwAAQABAAIAAAAKAAwAAQABAAIAAAALAAwAAQABAAIAAAAMAAwAAQABAAIAAAANAAwAAQABAAIAAAAOAAwAAQABAAIAAAAPAAwAAQABAAIAAAAQAAwAAQABAAIAAAARAAwAAQABAAIAAAASAAwAAQABAAIAAAATAAwAAQABAAIAAAAHAAsAAQAAAAEAAAAHAAoAAQAAAAEAAAAHAAkAAQAAAAEAAAAHAAgAAQAAAAEAAAAHAAcAAQAAAAEAAAAHAAYAAQADAAIAAAAIAAYAAQAEAAIAAAAJAAYAAQADAAIAAAAJAAcAAQADAAIAAAAJAAgAAQACAAEAAAAJAAkAAQACAAEAAAAJAAoAAQAEAAIAAAAJAAsAAQADAAEAAAAIAAsAAQADAAEAAAAIAAoAAQAEAAIAAAAIAAkAAQAEAAIAAAAIAAgAAQADAAIAAAAIAAcAAQADAAIAAAAHAAUAAQAEAAIAAAAHAAQAAQADAAEAAAAIAAQAAQABAAAAAAAJAAQAAQAEAAEAAAAJAAUAAQADAAEAAAAIAAUAAQADAAEAAAAKAAQAAQABAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAAPAAQAAQABAAAAAAAQAAQAAQACAAAAAAAQAAUAAQACAAEAAAAPAAUAAQABAAEAAAAOAAUAAQADAAIAAAANAAUAAQADAAEAAAAMAAUAAQADAAEAAAALAAUAAQADAAEAAAAKAAUAAQADAAEAAAAAAAEAAQAEAAIAAAAAAAAAAQABAAEAAAASAAAAAQAEAAIAAAASAAEAAQADAAIAAAATAAEAAQADAAIAAAATAAAAAQABAAEAAAAAAAIAAQABAAIAAAABAAIAAQACAAIAAAABAAEAAQADAAIAAAABAAAAAQADAAIAAAATAAsAAQABAAEAAAASAAsAAQAEAAIAAAARAAsAAQADAAIAAAAQAAsAAQADAAIAAAAPAAsAAQADAAIAAAAOAAsAAQAEAAIAAAANAAsAAQADAAIAAAAMAAsAAQABAAEAAAALAAsAAQAEAAIAAAAKAAsAAQADAAEAAAATAAoAAQAEAAEAAAASAAoAAQADAAEAAAARAAoAAQABAAAAAAAQAAoAAQABAAAAAAAPAAoAAQABAAAAAAAOAAoAAQABAAAAAAANAAoAAQABAAAAAAAMAAoAAQABAAAAAAALAAoAAQABAAAAAAAKAAoAAQABAAAAAAANAAYAAQADAAEAAAAOAAYAAQAEAAIAAAAPAAYAAQAEAAIAAAAQAAYAAQACAAEAAAAMAAYAAQADAAEAAAALAAYAAQADAAEAAAAKAAYAAQAEAAIAAAACAAAAAQAEAAIAAAADAAAAAQAEAAIAAAAEAAAAAQAEAAIAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQAEAAIAAAAIAAAAAQABAAEAAAAJAAAAAQAEAAIAAAAMAAAAAQABAAEAAAANAAAAAQAEAAIAAAAOAAAAAQABAAEAAAAPAAAAAQABAAEAAAAQAAAAAQADAAIAAAARAAAAAQADAAIAAAARAAEAAQABAAIAAAAQAAEAAQABAAIAAAAPAAEAAQABAAIAAAAOAAEAAQABAAIAAAANAAEAAQABAAIAAAAMAAEAAQABAAIAAAAKAAEAAQABAAIAAAACAAEAAQABAAIAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQABAAIAAAAIAAEAAQABAAIAAAAJAAEAAQABAAIAAAALAAAAAQAEAAIAAAAKAAAAAQABAAEAAAALAAEAAQABAAIAAAATAAIAAQADAAIAAAASAAIAAQAAAAIAAAATAAMAAQAAAAEAAAATAAQAAQAAAAEAAAATAAUAAQAAAAEAAAATAAYAAQAAAAEAAAATAAcAAQAAAAEAAAATAAgAAQAAAAEAAAATAAkAAQAAAAEAAAAGAAQAAQABAAAAAAAFAAQAAQABAAAAAAAFAAUAAQABAAEAAAAGAAUAAQADAAIAAAAGAAYAAQABAAIAAAAFAAYAAQABAAIAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAEAAAAEAAYAAQAAAAIAAAAQAAcAAQACAAIAAAAPAAcAAQABAAIAAAAOAAcAAQABAAIAAAANAAcAAQABAAIAAAAMAAcAAQABAAIAAAALAAcAAQABAAIAAAAKAAcAAQABAAIAAAA=")
+tile_set = ExtResource("2_vfli8")
 
-[node name="FruitTree" parent="." index="10" unique_id=1611624375 instance=ExtResource("3_an40m")]
-position = Vector2(128, 161)
+[node name="Absorbers" type="TileMapLayer" parent="." index="3" unique_id=20869883 groups=["Signal Absorbers"]]
+tile_map_data = PackedByteArray("AAAIAAUAAQAFAAUAAAAIAAYAAQACAAQAAAAIAAcAAQACAAQAAAAIAAgAAQACAAQAAAAIAAkAAQACAAQAAAAIAAoAAQACAAQAAAAIAAsAAQACAAUAAAAHAAUAAQAEAAQAAAAGAAUAAQAEAAQAAAAFAAUAAQADAAQAAAA=")
+tile_set = ExtResource("2_vfli8")
 
-[node name="TwistVine" parent="." index="11" unique_id=854348799 instance=ExtResource("4_mu84n")]
-position = Vector2(160, 161)
+[node name="BigMushroom" parent="." index="11" unique_id=1765231128 instance=ExtResource("3_puaxc")]
+position = Vector2(52, 48)
+
+[node name="FruitTree" parent="." index="12" unique_id=1060502896 instance=ExtResource("4_psex6")]
+position = Vector2(184, 139)
+
+[node name="TwistVine" parent="." index="13" unique_id=256976179 instance=ExtResource("5_s6sau")]
+position = Vector2(238, 50)
+
+[node name="Mirror" parent="." index="16" unique_id=1952546217 instance=ExtResource("6_i6aup")]
+position = Vector2(12, 16)
+rotation = 0.06981317
+rotation_speed = 0.1
+back_and_forth = true
+rotation_max_angle = 5.0
+
+[node name="Mirror2" parent="." index="17" unique_id=1961575474 instance=ExtResource("6_i6aup")]
+position = Vector2(300, 16)
+rotation = 1.5707964
+
+[node name="Mirror3" parent="." index="18" unique_id=725414081 instance=ExtResource("6_i6aup")]
+position = Vector2(300, 146)
+rotation = 3.1415927
+
+[node name="OilPatch" parent="." index="19" unique_id=1041192443 instance=ExtResource("7_yg073")]
+position = Vector2(280, 73)
+
+[node name="OilPatch2" parent="." index="20" unique_id=855753780 instance=ExtResource("7_yg073")]
+position = Vector2(294, 90)
+
+[node name="OilPatch3" parent="." index="21" unique_id=1682983481 instance=ExtResource("7_yg073")]
+position = Vector2(281, 106)
+
+[node name="AlienGreen" parent="." index="22" unique_id=1798181924 instance=ExtResource("7_fosrl")]
+position = Vector2(79, 132)
+
+[node name="AlienGreen2" parent="." index="23" unique_id=1420151042 instance=ExtResource("7_fosrl")]
+position = Vector2(92, 144)
+
+[node name="AlienGreen3" parent="." index="24" unique_id=1899831583 instance=ExtResource("7_fosrl")]
+position = Vector2(62, 138)
+
+[node name="AlienGreen4" parent="." index="25" unique_id=1595760132 instance=ExtResource("7_fosrl")]
+position = Vector2(80, 160)
+
+[node name="AlienGreen5" parent="." index="26" unique_id=1724278368 instance=ExtResource("7_fosrl")]
+position = Vector2(68, 170)
