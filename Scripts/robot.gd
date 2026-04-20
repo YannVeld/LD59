@@ -91,6 +91,7 @@ func _process(delta: float) -> void:
 		velocity.x += -speed
 		animated_sprite_2d.flip_h = false
 		ray_cast_2d.target_position = Vector2(-1,0)*LENGTH_RAYCAST
+	ray_cast_2d.force_raycast_update()
 
 
 	if not is_jumping:
@@ -100,7 +101,6 @@ func _process(delta: float) -> void:
 	
 
 func _on_area_entered(area: Area2D) -> void:
-	print("area entered")
 	if area.is_in_group("Signal Packets"):
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE
@@ -110,12 +110,10 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name=="LandingZone":
 		landing_zone_entered.emit()
 	if area.is_in_group("Oil Patches"):
-		print("oil patch")
 		slip()
 	pass # Replace with function body.
 
 func slip():
-	print("slipping")
 	slip_timer.start(SLIP_DURATION)
 	speed = SPEED*SLIP_SPEED_FACTOR
 
