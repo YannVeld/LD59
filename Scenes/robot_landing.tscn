@@ -81,6 +81,7 @@ animations = [{
 script = ExtResource("1_2p5yj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=56466812]
+z_index = 5
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_jfref")
 offset = Vector2(0, 8)
