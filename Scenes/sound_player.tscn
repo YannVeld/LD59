@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://82t6d5nlxs78"]
+
+[ext_resource type="Script" uid="uid://6fg1bpyokwu1" path="res://Scripts/sound_player.gd" id="1_pc1e3"]
+
+[node name="SoundPlayer" type="AudioStreamPlayer" unique_id=731586405]
+bus = &"SoundEffects"
+script = ExtResource("1_pc1e3")

@@ -7,13 +7,12 @@ var SignalPacketScene = preload("res://Scenes/SignalPacket.tscn")
 var SignalPacketInstance
 
 @onready var dish = $"./DishSprite"
+@onready var sound_player: SoundPlayer = $SoundPlayer
 
 @export
 var disable_aimguide = false
 
 var transmitter_ready = false
-
-signal on_instruction_fire(direction: String)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,7 +45,7 @@ func _input(event) -> void:
 			SignalPacketInstance.position = dish.global_position
 			SignalPacketInstance.add_to_group("Signal Packets")
 			$"../SignalPackets".add_child(SignalPacketInstance)
-			on_instruction_fire.emit(direction)
+			sound_player.play_sound(SoundPlayer.Sounds.TRANSMITTER_FIRE, true)
 	return 
 	
 

@@ -7,11 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8insh40rd2ql" path="res://Sprites/Robot_jump.png" id="3_dwnub"]
 [ext_resource type="Texture2D" uid="uid://dl4x87gjmmu5h" path="res://Sprites/ItemIcons_vine.png" id="4_dcvsp"]
 [ext_resource type="Texture2D" uid="uid://xlevbewu6ekd" path="res://Sprites/ItemIcons_fruit.png" id="5_ntbue"]
-[ext_resource type="AudioStream" uid="uid://2l0via05totp" path="res://Sounds/Bump.wav" id="8_dcvsp"]
-[ext_resource type="Script" uid="uid://l4j0q2j0o7vm" path="res://Scripts/robot_sounds.gd" id="9_m0m82"]
-[ext_resource type="AudioStream" uid="uid://cjk418bls7lk1" path="res://Sounds/Pickup.wav" id="10_aseuk"]
-[ext_resource type="AudioStream" uid="uid://c6jxkok6ebdfa" path="res://Sounds/Pip.wav" id="11_38h2r"]
-[ext_resource type="AudioStream" uid="uid://5ygtv6rvhpko" path="res://Sounds/Takeoff.wav" id="12_4lxxh"]
+[ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="8_dcvsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
 size = Vector2(10, 10)
@@ -296,20 +292,8 @@ one_shot = true
 [node name="SlipTimer" type="Timer" parent="." unique_id=2079394339]
 one_shot = true
 
-[node name="SoundEffectStream" type="AudioStreamPlayer" parent="." unique_id=1314476537]
-stream = ExtResource("8_dcvsp")
-bus = &"SoundEffects"
-script = ExtResource("9_m0m82")
-_sound_dict = Dictionary[int, AudioStream]({
-0: ExtResource("10_aseuk"),
-1: ExtResource("8_dcvsp"),
-2: ExtResource("11_38h2r"),
-3: ExtResource("12_4lxxh")
-})
+[node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("8_dcvsp")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="bumped_wall" from="." to="SoundEffectStream" method="_on_robot_bumped_wall"]
-[connection signal="item_collected" from="." to="SoundEffectStream" method="_on_robot_item_collected"]
-[connection signal="received_instruction" from="." to="SoundEffectStream" method="_on_robot_received_instruction"]
 [connection signal="timeout" from="ParticleTimer" to="." method="_on_particle_timer_timeout"]
 [connection signal="timeout" from="SlipTimer" to="." method="_on_slip_timer_timeout"]

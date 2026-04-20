@@ -9,8 +9,6 @@ const SLIP_SPEED_FACTOR = 4
 
 signal item_collected
 signal landing_zone_entered
-signal bumped_wall
-signal received_instruction
 
 @export var item_icons: Dictionary[String, Texture2D] = {'fruit'=null, 'mushroom'=null, 'vine'=null}
 
@@ -19,6 +17,7 @@ signal received_instruction
 @onready var item_pickup_particle: CPUParticles2D = $ItemPickupParticle
 @onready var particle_timer: Timer = $ParticleTimer
 @onready var slip_timer: Timer = $SlipTimer
+@onready var sound_player: SoundPlayer = $SoundPlayer
 
 var time_since_collision: float = 999.0
 var last_item_collected: String = ""
@@ -47,7 +46,7 @@ func _play_item_collect_particle(name: String) -> void:
 func _collect_item(item: Collectable) -> void:
 	print("Collected ", item.item_name)
 	print(item.turn_off_shader())
-	#item_collected.emit(item.name)
+	sound_player.play_sound(SoundPlayer.Sounds.ROBOT_COLLECT)
 	item_collected.emit()
 	animated_sprite_2d.set_animation('jump')
 	last_item_collected = item.item_name
@@ -75,8 +74,8 @@ func _process(delta: float) -> void:
 
 	if ray_cast_2d.is_colliding():
 		direction = _get_bounce_direction()
-		bumped_wall.emit()
 		time_since_collision = 0.0
+		sound_player.play_sound(SoundPlayer.Sounds.ROBOT_BUMP)
 		
 	var velocity = Vector2.ZERO
 	if direction == 'null':
@@ -107,7 +106,8 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Signal Packets"):
 		if not (area.instruction == direction):
-			received_instruction.emit()
+			sound_player.play_sound(SoundPlayer.Sounds.ROBOT_RECEIVE)
+			
 		direction = area.instruction
 		time_since_collision = COLL_TIME_IDLE
 		

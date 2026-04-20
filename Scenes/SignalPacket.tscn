@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8p8y32085rx6" path="res://Sprites/InstructionPackages/InstructionPackage_left.png" id="4_ctvqe"]
 [ext_resource type="Texture2D" uid="uid://0w0ijysjk3ky" path="res://Sprites/InstructionPackages/InstructionPackage_right.png" id="5_ywsrf"]
 [ext_resource type="Texture2D" uid="uid://dtv6ive2ktd5d" path="res://Sprites/InstructionPackages/InstructionPackage_empty.png" id="6_ctvqe"]
+[ext_resource type="PackedScene" uid="uid://82t6d5nlxs78" path="res://Scenes/sound_player.tscn" id="7_ywsrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6bd5y"]
 radius = 5.0
@@ -17,6 +18,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 z_index = 5
 collision_mask = 12
 script = ExtResource("1_6bd5y")
+instruction = null
+direction = null
 sprites = Dictionary[String, CompressedTexture2D]({
 "": ExtResource("6_ctvqe"),
 "down": ExtResource("2_7anpm"),
@@ -49,6 +52,8 @@ damping_min = 1.0
 damping_max = 10.0
 color = Color(0.56078434, 0.8, 0.79607844, 1)
 color_ramp = SubResource("Gradient_ctvqe")
+
+[node name="SoundPlayer" parent="." unique_id=731586405 instance=ExtResource("7_ywsrf")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
