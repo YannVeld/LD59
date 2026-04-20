@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://lanjd6rsvake" path="res://Sprites/MirrorDish_mirror.png" id="1_2mjjl"]
 [ext_resource type="Texture2D" uid="uid://dk4vwyqvd26" path="res://Sprites/MirrorDish_base.png" id="1_h3i6c"]
-[ext_resource type="Script" uid="uid://g5nl0p845sab" path="res://Scripts/mirror.gd" id="1_u08g2"]
-[ext_resource type="Script" uid="uid://dw6hkquixl3vk" path="res://Scripts/mirror_base.gd" id="2_16kbh"]
+[ext_resource type="Script" path="res://Scripts/mirror.gd" id="1_u08g2"]
+[ext_resource type="Script" path="res://Scripts/mirror_base.gd" id="2_16kbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aik5e"]
 size = Vector2(19.798992, 2)
@@ -18,13 +18,13 @@ script = ExtResource("2_16kbh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1428829103]
 position = Vector2(-0.0004950762, -0.0004953742)
-rotation = -0.7853982
+rotation = 2.3561945
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_aik5e")
 one_way_collision = true
 
 [node name="DishSprite" type="Sprite2D" parent="CollisionShape2D" unique_id=1306134598]
 position = Vector2(-4.2124313e-08, 0.0007001857)
-rotation = 0.7853982
+rotation = 3.9269907
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("1_2mjjl")

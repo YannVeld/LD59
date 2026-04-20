@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bg34tnjmwlm3" path="res://Scenes/mirror.tscn" id="8_87x5k"]
 [ext_resource type="PackedScene" uid="uid://dt2myv41h3cv8" path="res://Scenes/alien_green.tscn" id="9_yfwe1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qaqf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qulpo"]
 resource_name = "Terrain"
 texture = ExtResource("2_8at3q")
 1:0/0 = 0
@@ -1041,7 +1041,7 @@ texture = ExtResource("2_8at3q")
 12:47/0 = 0
 13:47/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3seiu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jifot"]
 texture = ExtResource("3_87x5k")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -1184,8 +1184,8 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_5qaqf")
-sources/1 = SubResource("TileSetAtlasSource_3seiu")
+sources/0 = SubResource("TileSetAtlasSource_qulpo")
+sources/1 = SubResource("TileSetAtlasSource_jifot")
 
 [node name="Level" unique_id=1798613870 instance=ExtResource("1_0jveu")]
 metadata/_edit_horizontal_guides_ = [27.0]
