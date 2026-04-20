@@ -7,8 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://xwd3d6ogcad7" path="res://Scenes/tower_landing.tscn" id="6_djkc3"]
 [ext_resource type="PackedScene" uid="uid://kpu2fujbxyg1" path="res://Scenes/transmitter.tscn" id="7_jj470"]
 [ext_resource type="PackedScene" uid="uid://bsheukrvpenne" path="res://Scenes/fader.tscn" id="7_uinmr"]
-[ext_resource type="Script" path="res://Scripts/circle_renderer.gd" id="8_747y3"]
+[ext_resource type="Script" uid="uid://cwbkkrb40j46t" path="res://Scripts/circle_renderer.gd" id="8_747y3"]
 [ext_resource type="PackedScene" uid="uid://16xyn1wj8noj" path="res://Scenes/robot_takeoff.tscn" id="9_cysh1"]
+[ext_resource type="Script" uid="uid://dk3n5ya6iyx44" path="res://Scripts/level_label.gd" id="10_uinmr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ph1qb"]
+font_size = 24
+font_color = Color(1, 0.95686275, 0.88235295, 1)
 
 [node name="Level" type="Node2D" unique_id=1798613870]
 
@@ -39,10 +44,45 @@ script = ExtResource("8_747y3")
 [node name="RobotTakeoff" parent="." unique_id=785121779 instance=ExtResource("9_cysh1")]
 position = Vector2(60, 118)
 
+[node name="Control" type="Control" parent="." unique_id=1560885959]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelLabel" type="Label" parent="Control" unique_id=1605198459]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -11.5
+offset_right = 22.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level "
+label_settings = SubResource("LabelSettings_ph1qb")
+script = ExtResource("10_uinmr")
+
+[node name="LevelLabelTimer" type="Timer" parent="Control" unique_id=1187380697]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="mission_accomplished" from="GameManager" to="CircleRenderer" method="_on_game_manager_mission_accomplished"]
 [connection signal="item_collected" from="Robot" to="GameManager" method="_on_robot_item_collected"]
 [connection signal="landing_zone_entered" from="Robot" to="GameManager" method="_on_robot_landing_zone_entered"]
 [connection signal="landing_animation_finished" from="TowerLanding" to="Transmitter" method="_on_tower_landing_landing_animation_finished"]
+[connection signal="on_fade_in_finished" from="Fader" to="GameManager" method="_on_fader_on_fade_in_finished"]
 [connection signal="on_fade_out_finished" from="Fader" to="GameManager" method="_on_fader_on_fade_out_finished"]
 [connection signal="phoneHome" from="CircleRenderer" to="LandingZone" method="_on_circle_renderer_phone_home"]
 [connection signal="takeoff_complete" from="RobotTakeoff" to="Fader" method="_on_robot_takeoff_takeoff_complete"]
+[connection signal="timeout" from="Control/LevelLabelTimer" to="GameManager" method="_on_level_label_timer_timeout"]

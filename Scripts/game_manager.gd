@@ -16,6 +16,9 @@ var robot_has_taken_off = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Entering level ", SessionManager.current_level)
+	$"../Control".modulate.a = 0
+	$"../Control/LevelLabel".text += str(SessionManager.current_level)
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -65,3 +68,24 @@ func _on_fader_on_fade_out_finished() -> void:
 		
 	else:
 		get_tree().change_scene_to_file("res://game_menu.tscn")
+		
+func modulate_in(thing, duration):
+	thing.modulate.a = 0
+	
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 1., duration)
+	
+func modulate_out(thing, duration):
+	thing.modulate.a = 1
+	
+	var tween = create_tween()
+	tween.tween_property(thing, "modulate:a", 0., duration)
+
+func _on_fader_on_fade_in_finished() -> void:
+	modulate_in($"../Control", 3)
+	$"../Control/LevelLabelTimer".start(2.5)
+	pass # Replace with function body.
+
+func _on_level_label_timer_timeout() -> void:
+	modulate_out($"../Control", 1)
+	pass # Replace with function body.
