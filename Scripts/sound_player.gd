@@ -4,6 +4,7 @@ enum Sounds {NULL=0,
 			 ROBOT_COLLECT, ROBOT_BUMP, ROBOT_RECEIVE,
 			 ROBOT_TAKEOFF, ROBOT_LAND, ROBO_PHONE_HOME,
 			 TRANSMITTER_FIRE, TRANSMITTER_LAND, TRANSMITTER_READY,
+			 TRANSMITTER_FALLING,
 			 PACKET_REFLECTED, PACKET_BLOCKED}
 const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.ROBOT_COLLECT: preload("res://Sounds/Pickup.wav"),
@@ -15,6 +16,7 @@ const _sound_dict: Dictionary[Sounds, AudioStream] = {
 	Sounds.TRANSMITTER_FIRE: preload("res://Sounds/Shoot.wav"),
 	Sounds.TRANSMITTER_LAND: preload("res://Sounds/Hurt.wav"),
 	Sounds.TRANSMITTER_READY: preload("res://Sounds/TowerReady.wav"),
+	Sounds.TRANSMITTER_FALLING: preload("res://Sounds/TowerFall.wav"),
 	Sounds.PACKET_REFLECTED: preload("res://Sounds/Reflect.wav"),
 	Sounds.PACKET_BLOCKED: preload("res://Sounds/Blocked.wav")
 }
