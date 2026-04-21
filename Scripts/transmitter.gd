@@ -13,6 +13,7 @@ var SignalPacketInstance
 var disable_aimguide = false
 
 var transmitter_ready = false
+var last_input_device = "keyboard_mouse"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,10 +23,18 @@ func _ready() -> void:
 
 		
 func _input(event) -> void:
+	if (event is InputEventJoypadButton) or (event is InputEventJoypadMotion):
+		last_input_device = "controller"
+	elif (event is InputEventMouseMotion) \
+		or (event is InputEventMouseButton) \
+		or (event is InputEventKey):
+		last_input_device = "keyboard_mouse"
+		
+	
 	if not transmitter_ready:
 		return
 		
-	if event is InputEventKey:
+	if (event is InputEventKey) or (event is InputEventJoypadButton):
 		direction = "null" 
 		# Send signal packet
 		if Input.is_action_pressed("move_down"):
@@ -38,10 +47,17 @@ func _input(event) -> void:
 			direction = 'right'
 		
 		if direction != 'null': 
-			mouse_position = get_viewport().get_mouse_position()
 			SignalPacketInstance = SignalPacketScene.instantiate()
 			SignalPacketInstance.instruction = direction
-			SignalPacketInstance.direction = ((mouse_position - dish.global_position).normalized())
+			
+			var _dir = Vector2.RIGHT
+			if last_input_device == "controller":
+				_dir = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
+			else:
+				mouse_position = get_viewport().get_mouse_position()
+				_dir = ((mouse_position - dish.global_position).normalized())
+			
+			SignalPacketInstance.direction = _dir
 			SignalPacketInstance.position = dish.global_position
 			SignalPacketInstance.add_to_group("Signal Packets")
 			$"../SignalPackets".add_child(SignalPacketInstance)

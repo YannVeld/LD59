@@ -5,7 +5,8 @@ var end_point
 @onready
 var dish = $"../DishSprite"
 var start_point 
-var heading
+var heading = Vector2.RIGHT
+var last_input_device = "keyboard_mouse"
 
 const MIRROR_ANGLE=PI/4.
 
@@ -32,6 +33,13 @@ func draw_next_segment(start_point, heading) -> void:
 		return
 		
 		#
+func _input(event) -> void:
+	if (event is InputEventJoypadButton) or (event is InputEventJoypadMotion):
+		last_input_device = "controller"
+	elif (event is InputEventMouseMotion) \
+		or (event is InputEventMouseButton) \
+		or (event is InputEventKey):
+		last_input_device = "keyboard_mouse"
 
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,6 +47,13 @@ func _process(delta: float) -> void:
 	clear_points()
 	start_point = dish.global_position
 	add_point(start_point)
-	heading = (get_viewport().get_mouse_position()-start_point).normalized()
+	
+	if last_input_device == "controller":
+		var _inp = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down").normalized()
+		if _inp.length() > 0:
+			heading = _inp
+	else:
+		heading = (get_viewport().get_mouse_position()-start_point).normalized()
+	
 	draw_next_segment(start_point, heading)
 	pass
